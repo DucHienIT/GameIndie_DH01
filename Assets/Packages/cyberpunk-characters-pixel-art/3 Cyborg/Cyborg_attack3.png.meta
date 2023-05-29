@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -115,7 +115,259 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Cyborg_attack3_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 0
+        width: 19
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a301c63cad32ab4e9d33a2ad23672f8
+      internalID: 1989160464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyborg_attack3_1
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 0
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8d91d6e0a045db45bb6e7872fc111b3
+      internalID: -317050787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyborg_attack3_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 22
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0186974704282e84f952de203d7d1541
+      internalID: 131488464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyborg_attack3_3
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 0
+        width: 17
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 533d8a3a397e5c44491132fdd252302d
+      internalID: 1132374267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyborg_attack3_4
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 28
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ee4a87e8f75e4740ad9b5b2ac6e5484
+      internalID: -2065142019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyborg_attack3_5
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 0
+        width: 18
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6289f51dcddd54144a65d99e296344a9
+      internalID: -1343536188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyborg_attack3_6
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 30
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 370d259c79cfbd2439682befc2e268b3
+      internalID: -27616357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyborg_attack3_7
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 0
+        width: 29
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d3f92b11ac2778458e19599035d8178
+      internalID: -1977605971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyborg_attack3_8
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 0
+        width: 18
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c84ae2016f2f2545ab4651e6a94159f
+      internalID: -1222818333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyborg_attack3_9
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 31
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9936fbf93c280f740a26a8a08123c355
+      internalID: -1258373234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyborg_attack3_10
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 13
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6baa21eb57187f04c8f5475b4f0fc9d7
+      internalID: 1347987603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyborg_attack3_11
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 13
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d7b4868ee78b9f43a3bf148d8e1d55f
+      internalID: 1311757754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -126,7 +378,19 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Cyborg_attack3_0: 1989160464
+      Cyborg_attack3_1: -317050787
+      Cyborg_attack3_10: 1347987603
+      Cyborg_attack3_11: 1311757754
+      Cyborg_attack3_2: 131488464
+      Cyborg_attack3_3: 1132374267
+      Cyborg_attack3_4: -2065142019
+      Cyborg_attack3_5: -1343536188
+      Cyborg_attack3_6: -27616357
+      Cyborg_attack3_7: -1977605971
+      Cyborg_attack3_8: -1222818333
+      Cyborg_attack3_9: -1258373234
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

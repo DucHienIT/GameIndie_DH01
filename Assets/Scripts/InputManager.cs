@@ -13,6 +13,10 @@ public class InputManager : MonoBehaviour
     [SerializeField] protected float onFiring;
     public float OnFiring { get { return this.onFiring; } }
 
+    [SerializeField] protected float onShooting;
+    public float OnShooting { get { return this.onShooting; } }
+
+
     [SerializeField] protected bool isJumping;
     public bool IsJumping { get { return this.isJumping; } }
 
@@ -51,6 +55,7 @@ public class InputManager : MonoBehaviour
     protected virtual void GetMouseDown()
     {
         this.onFiring = Input.GetAxis("Fire1");
+        this.onShooting = Input.GetAxis("Fire2");
     }
 
     protected virtual void GetJumpInput()

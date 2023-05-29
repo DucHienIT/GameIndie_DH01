@@ -11,8 +11,6 @@ public class CharaterMovement : MonoBehaviour
     private Rigidbody2D rb;
    
 
-    [SerializeField] private bool isJumping = false;
-
     private void Start()
     {
         animator = transform.parent.GetComponentInChildren<Animator>();
