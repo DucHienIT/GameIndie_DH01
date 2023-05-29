@@ -13,6 +13,9 @@ public class InputManager : MonoBehaviour
     [SerializeField] protected float onFiring;
     public float OnFiring { get { return this.onFiring; } }
 
+    [SerializeField] protected bool isJumping;
+    public bool IsJumping { get { return this.isJumping; } }
+
     private void Awake()
     {
         if (InputManager.instance != null)
@@ -26,6 +29,7 @@ public class InputManager : MonoBehaviour
     {
         GetMovementInput();
         GetMouseDown();
+        GetJumpInput();
     }
 
     protected virtual void GetMovementInput()
@@ -41,22 +45,16 @@ public class InputManager : MonoBehaviour
         {
             moveHorizontal = -1f;
         }
-
-        if (Input.GetKey(KeyCode.W))
-        {
-            moveVertical = 1f;
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            moveVertical = -1f;
-        }
-
         movementInput = new Vector3(moveHorizontal, 0f, moveVertical);
     }
-
 
     protected virtual void GetMouseDown()
     {
         this.onFiring = Input.GetAxis("Fire1");
+    }
+
+    protected virtual void GetJumpInput()
+    {
+        this.isJumping = Input.GetKeyDown(KeyCode.Space);
     }
 }
