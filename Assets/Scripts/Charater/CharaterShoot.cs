@@ -21,21 +21,19 @@ public class CharaterShoot : MonoBehaviour
 
     protected virtual void Shoot()
     {
-        if (!this.shooting) return;
+        if (this.shootTimer < this.shootDelay)
+        {
+            this.shootTimer += Time.fixedDeltaTime;
+            return;
+        }    
 
-        this.shootTimer += Time.fixedDeltaTime;
-        if (this.shootTimer < this.shootDelay) return;
+        if (!this.shooting) return;
         this.shootTimer = 0f;
 
-        // Lấy vị trí chuột trên màn hình
-        Vector3 mousePosition = Input.mousePosition;
-        mousePosition.z = 10f; // Khoảng cách từ Camera đến mặt phẳng màn hình
-
-        // Chuyển đổi vị trí chuột từ không gian màn hình sang không gian thế giới
-        Vector3 targetPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+        
 
         // Tính toán góc giữa đối tượng bắn và vị trí chuột
-        Vector3 direction = targetPosition - transform.position;
+        Vector3 direction = this.GetMousePosition() - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
@@ -49,7 +47,18 @@ public class CharaterShoot : MonoBehaviour
     protected virtual void SetShooting()
     {
         this.shooting = InputManager.Instance.OnShooting == 1;
-        Debug.Log(shooting);
     }
+
+    protected virtual Vector3 GetMousePosition()
+    {
+        // Lấy vị trí chuột trên màn hình
+        Vector3 mousePosition = Input.mousePosition;
+        mousePosition.z = 10f; // Khoảng cách từ Camera đến mặt phẳng màn hình
+
+        // Chuyển đổi vị trí chuột từ không gian màn hình sang không gian thế giới
+        Vector3 targetPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+
+        return targetPosition;
+    }    
 
 }
