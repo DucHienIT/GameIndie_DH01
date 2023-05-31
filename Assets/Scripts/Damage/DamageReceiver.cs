@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(BoxCollider2D))]
+[RequireComponent(typeof(SphereCollider))]
 public abstract class DamageReceiver : DucHienMonoBehaviour
 {
     [Header("Damage Receiver")]
-    [SerializeField] protected BoxCollider2D boxCollider2D;
+    [SerializeField] protected SphereCollider sphereCollider;
     [SerializeField] protected int hp = 10;
     [SerializeField] protected int maxHp = 10;
     [SerializeField] protected bool isDead = false;
@@ -29,9 +29,10 @@ public abstract class DamageReceiver : DucHienMonoBehaviour
     }
     protected virtual void LoadCollider()
     {
-        if (this.boxCollider2D != null) return;
-        this.boxCollider2D = GetComponent<BoxCollider2D>();
-        this.boxCollider2D.isTrigger = true;
+        if (this.sphereCollider != null) return;
+        this.sphereCollider = GetComponent<SphereCollider>();
+        this.sphereCollider.isTrigger = true;
+        this.sphereCollider.radius = 0.2f;
         Debug.Log(transform.name + ": LoadCollider", gameObject);
     }
 

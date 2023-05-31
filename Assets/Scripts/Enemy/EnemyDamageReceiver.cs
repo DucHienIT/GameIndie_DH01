@@ -22,14 +22,12 @@ public class EnemyDamageReceiver : DamageReceiver
     }
     protected override void OnDead()
     {
-       
+        this.enemyCtrl.EnemyDespawn.DespawnObject();
     }
     protected virtual void OnDeadFX()
     {
        
     }
-
-    
     public override void Reborn()
     {
        

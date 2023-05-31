@@ -10,12 +10,17 @@ public class EnemyCtrl : DucHienMonoBehaviour
     [SerializeField] protected DamageReceiver damageReceiver;
     public DamageReceiver DamageReceiver { get { return damageReceiver; } }
 
+    [SerializeField] protected EnemyDespawn enemyDespawn;
+    public EnemyDespawn EnemyDespawn { get => enemyDespawn; }
+
     protected override void LoadComponents()
     {
         base.LoadComponents();
         this.LoadModel();
         this.LoadDamageReceiver();
-       
+        this.LoadJunkDespawn();
+
+
     }
     protected virtual void LoadModel()
     {
@@ -30,5 +35,11 @@ public class EnemyCtrl : DucHienMonoBehaviour
         this.damageReceiver = GetComponentInChildren<DamageReceiver>();
         Debug.Log("LoadDamageReceiver: " + this.damageReceiver);
     }
-    
+
+    protected virtual void LoadJunkDespawn()
+    {
+        if (this.enemyDespawn != null) return;
+        this.enemyDespawn = GetComponentInChildren<EnemyDespawn>();
+    }
+
 }
