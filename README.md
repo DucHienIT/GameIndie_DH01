@@ -48,3 +48,5 @@ If you wish to contribute to Max Fire's development, please follow these guideli
 Max Fire is created and developed by DucHienIT. Special thanks to [contributors] for their valuable contributions.
 
 Enjoy playing Max Fire!
+![z4392135507802_ecfcbf2083652cce06815b6b9571cc76](https://github.com/DucHienIT/GameIndie_DH01/assets/88640081/9463af3a-0c7f-4744-8d8c-adcb00cdccdf)
+![z4392135493415_baf12e0ac2e1ddf49b02ef0b04178437](https://github.com/DucHienIT/GameIndie_DH01/assets/88640081/18dc188f-071f-4651-859c-e53a26a5dcb8)
