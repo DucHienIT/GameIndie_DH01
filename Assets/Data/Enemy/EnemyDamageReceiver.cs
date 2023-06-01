@@ -30,7 +30,7 @@ public class EnemyDamageReceiver : DamageReceiver
     }
     public override void Reborn()
     {
-       
+        this.maxHp = this.enemyCtrl.EnemySO.hpMax;
         base.Reborn();
     }
 }

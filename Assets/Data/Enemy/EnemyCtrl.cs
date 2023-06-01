@@ -13,12 +13,16 @@ public class EnemyCtrl : DucHienMonoBehaviour
     [SerializeField] protected EnemyDespawn enemyDespawn;
     public EnemyDespawn EnemyDespawn { get => enemyDespawn; }
 
+    [SerializeField] protected EnemySO enemySO;
+    public EnemySO EnemySO { get { return enemySO; } }
+
     protected override void LoadComponents()
     {
         base.LoadComponents();
         this.LoadModel();
         this.LoadDamageReceiver();
-        this.LoadJunkDespawn();
+        this.LoadEnemyDespawn();
+        this.LoadEnemySO();
 
 
     }
@@ -36,10 +40,15 @@ public class EnemyCtrl : DucHienMonoBehaviour
         Debug.Log("LoadDamageReceiver: " + this.damageReceiver);
     }
 
-    protected virtual void LoadJunkDespawn()
+    protected virtual void LoadEnemyDespawn()
     {
         if (this.enemyDespawn != null) return;
         this.enemyDespawn = GetComponentInChildren<EnemyDespawn>();
     }
-
+    protected virtual void LoadEnemySO()
+    {
+        if(this.enemySO != null) return;
+        string path = "Enemy/" + transform.name;
+        this.enemySO = Resources.Load<EnemySO>(path);
+    }    
 }
