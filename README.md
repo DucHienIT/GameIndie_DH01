@@ -1,5 +1,8 @@
-[# Game Indie Max Fire
+[# Game Design Document
 ](https://docs.google.com/document/d/1RrMy8KLYFrqBFXrwY0cCQjQDps6gpysbGNaFhvRWk08/edit#heading=h.aes937z3kjs8)
+[# Video demo
+](https://youtu.be/HAb7hxvjKN0)
+
 # Max Fire
 
 Max Fire is an action-packed 2D shooting game that offers fast-paced gameplay, requiring skill and presenting a high level of challenge.
