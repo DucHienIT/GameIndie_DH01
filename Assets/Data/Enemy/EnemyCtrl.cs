@@ -19,6 +19,9 @@ public class EnemyCtrl : DucHienMonoBehaviour
     [SerializeField] protected Animator animator;
     public Animator Animator { get { return animator; } set { animator = value; } }
 
+    [SerializeField] protected EnemyStatusBar enemyStatusBar;
+    public EnemyStatusBar EnemyStatusBar { get { return enemyStatusBar; } }
+
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -27,6 +30,7 @@ public class EnemyCtrl : DucHienMonoBehaviour
         this.LoadEnemyDespawn();
         this.LoadEnemySO();
         this.LoadAnimator();
+        this.LoadEnemyStatusBar();
 
 
     }
@@ -59,5 +63,10 @@ public class EnemyCtrl : DucHienMonoBehaviour
     {
         if (this.animator != null) return;
         this.animator = GetComponentInChildren<Animator>();
+    }
+    protected virtual void LoadEnemyStatusBar()
+    {
+        if (this.enemyStatusBar != null) return;
+        this.enemyStatusBar = GetComponentInChildren<EnemyStatusBar>();
     }
 }

@@ -8,7 +8,14 @@ public abstract class DamageReceiver : DucHienMonoBehaviour
     [Header("Damage Receiver")]
     [SerializeField] protected SphereCollider sphereCollider;
     [SerializeField] protected int hp = 10;
+
+
+    public int Hp { get { return hp; } }
+
     [SerializeField] protected int maxHp = 10;
+    public int MaxHp { get { return maxHp; } }
+
+
     [SerializeField] protected bool isDead = false;
 
     protected override void OnEnable()

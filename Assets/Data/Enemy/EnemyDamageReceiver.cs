@@ -24,6 +24,8 @@ public class EnemyDamageReceiver : DamageReceiver
 
         Debug.Log(transform.name + ": LoadEnemyCtrl", gameObject);
     }
+
+
     protected override void OnDead()
     {
         this.enemyCtrl.EnemyDespawn.DespawnObject();
@@ -40,12 +42,15 @@ public class EnemyDamageReceiver : DamageReceiver
     {
         this.maxHp = this.enemyCtrl.EnemySO.hpMax;
         base.Reborn();
+
+        this.enemyCtrl.EnemyStatusBar.RebornHpBar();
+        
     }
     public override void Sub(int value)
     {
         base.Sub(value);
         enemyCtrl.Animator.SetBool("isHurt", true);
+        this.enemyCtrl.EnemyStatusBar.UpdateHpBar();
 
-        Debug.Log("Set Bool");
     }
 }
