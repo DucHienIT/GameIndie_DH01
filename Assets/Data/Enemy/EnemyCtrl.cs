@@ -16,6 +16,9 @@ public class EnemyCtrl : DucHienMonoBehaviour
     [SerializeField] protected EnemySO enemySO;
     public EnemySO EnemySO { get { return enemySO; } }
 
+    [SerializeField] protected Animator animator;
+    public Animator Animator { get { return animator; } set { animator = value; } }
+
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -23,6 +26,7 @@ public class EnemyCtrl : DucHienMonoBehaviour
         this.LoadDamageReceiver();
         this.LoadEnemyDespawn();
         this.LoadEnemySO();
+        this.LoadAnimator();
 
 
     }
@@ -32,7 +36,7 @@ public class EnemyCtrl : DucHienMonoBehaviour
         this.model = transform.Find("Model");
         Debug.Log("LoadModel: " + this.model);
     }
-    
+
     protected virtual void LoadDamageReceiver()
     {
         if (this.damageReceiver != null) return;
@@ -47,8 +51,13 @@ public class EnemyCtrl : DucHienMonoBehaviour
     }
     protected virtual void LoadEnemySO()
     {
-        if(this.enemySO != null) return;
+        if (this.enemySO != null) return;
         string path = "Enemy/" + transform.name;
         this.enemySO = Resources.Load<EnemySO>(path);
-    }    
+    }
+    protected virtual void LoadAnimator()
+    {
+        if (this.animator != null) return;
+        this.animator = GetComponentInChildren<Animator>();
+    }
 }

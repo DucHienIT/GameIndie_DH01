@@ -7,6 +7,10 @@ public class EnemyDamageReceiver : DamageReceiver
     [Header("Enemy")]
     [SerializeField] protected EnemyCtrl enemyCtrl;
 
+    protected virtual void FixedUpdate()
+    {
+        enemyCtrl.Animator.SetBool("isHurt", false);
+    }
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -23,14 +27,25 @@ public class EnemyDamageReceiver : DamageReceiver
     protected override void OnDead()
     {
         this.enemyCtrl.EnemyDespawn.DespawnObject();
+        this.OnDeadEffect();
     }
-    protected virtual void OnDeadFX()
+    protected virtual void OnDeadEffect()
     {
-       
+        string fxName = EffectSpawner.effect_1;
+        Transform fxOnDead = EffectSpawner.Instance.Spawn(fxName, transform.position, transform.rotation);
+        fxOnDead.gameObject.SetActive(true);
+
     }
     public override void Reborn()
     {
         this.maxHp = this.enemyCtrl.EnemySO.hpMax;
         base.Reborn();
+    }
+    public override void Sub(int value)
+    {
+        base.Sub(value);
+        enemyCtrl.Animator.SetBool("isHurt", true);
+
+        Debug.Log("Set Bool");
     }
 }

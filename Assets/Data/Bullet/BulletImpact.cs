@@ -33,8 +33,6 @@ public class BulletImpact : BulletAbstract
     }
     protected virtual void OnTriggerEnter(Collider other)
     {
-        
-         this.BulletCtrl.DamageSender.Send(other.transform);
-      
+         this.BulletCtrl.DamageSender.Send(other.transform); 
     }
 }
