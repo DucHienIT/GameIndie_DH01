@@ -4,7 +4,10 @@
 [# Video demo
 ](https://youtu.be/HAb7hxvjKN0)
 
+![iicon](https://github.com/DucHienIT/GameIndie_DH01/assets/88640081/319df0b2-ada2-4ecd-bae8-45f33a37811f)
+
 # Max Fire
+
 
 Max Fire is an action-packed 2D shooting game that offers fast-paced gameplay, requiring skill and presenting a high level of challenge.
 
