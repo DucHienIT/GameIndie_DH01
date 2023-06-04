@@ -269,8 +269,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1708ff5fce411346b7fe065551879db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 4
+  damage: 10
   bulletCtrl: {fileID: 1589108690}
+  charaterStatus: {fileID: 0}
 --- !u!4 &99010401
 Transform:
   m_ObjectHideFlags: 0
@@ -876,7 +877,7 @@ Transform:
   - {fileID: 405847735}
   - {fileID: 817839461}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &366084401
 MonoBehaviour:
@@ -1310,10 +1311,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 631724480}
   - {fileID: 865663698}
   - {fileID: 1357362364}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &532597836
 MonoBehaviour:
@@ -1432,7 +1434,7 @@ Transform:
   - {fileID: 94396961}
   - {fileID: 1775783996}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &544591285
 MonoBehaviour:
@@ -1677,15 +1679,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 631724479}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.40883663, y: 0.13295901, z: -10.276839}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 519420032}
   - {fileID: 569825433}
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 532597835}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &631724481
 MonoBehaviour:
@@ -2088,7 +2090,7 @@ Transform:
   m_Children:
   - {fileID: 1589108689}
   m_Father: {fileID: 532597835}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &875733921
 GameObject:
@@ -2798,6 +2800,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sphereCollider: {fileID: 1284466190}
+  weaponCtrl: {fileID: 903971209}
 --- !u!135 &1284466190
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2919,7 +2922,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 532597835}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1450595114
 GameObject:
@@ -4206,7 +4209,7 @@ Transform:
   - {fileID: 948209960}
   - {fileID: 140845135}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1997770802
 MonoBehaviour:
@@ -4367,6 +4370,7 @@ GameObject:
   - component: {fileID: 2117117059}
   - component: {fileID: 2117117060}
   - component: {fileID: 2117117061}
+  - component: {fileID: 2117117062}
   m_Layer: 0
   m_Name: Charater
   m_TagString: Untagged
@@ -4429,6 +4433,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterTransform: {fileID: 0}
+--- !u!114 &2117117062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117117058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ed586943fae2d34a8ef82b56d725594, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  attackPower: 10
+  movementSpeed: 5
+  inventory: {fileID: 2001599197}
 --- !u!1 &2132445058
 GameObject:
   m_ObjectHideFlags: 0
@@ -4461,7 +4481,7 @@ Transform:
   - {fileID: 358366222}
   - {fileID: 1323718552}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2132445061
 MonoBehaviour:

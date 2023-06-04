@@ -7,6 +7,8 @@ public class Inventory : DucHienMonoBehaviour
     [SerializeField] protected int maxSlot = 70;
     [SerializeField] protected List<ItemInventory> weapons;
 
+    public List<ItemInventory> ListWeapons => weapons;
+
 
     public virtual bool AddItem(ItemInventory item)
     {
@@ -26,5 +28,10 @@ public class Inventory : DucHienMonoBehaviour
             }
         }
         return false;
+    }
+
+    public virtual void EquipWeapon(WeaponSO weapon)
+    {
+        
     }
 }
