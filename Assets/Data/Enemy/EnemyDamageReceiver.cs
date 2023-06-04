@@ -30,6 +30,7 @@ public class EnemyDamageReceiver : DamageReceiver
     {
         this.enemyCtrl.EnemyDespawn.DespawnObject();
         this.OnDeadEffect();
+        this.DropWeapon();
     }
     protected virtual void OnDeadEffect()
     {
@@ -38,11 +39,18 @@ public class EnemyDamageReceiver : DamageReceiver
         fxOnDead.gameObject.SetActive(true);
 
     }
+
+    protected virtual void DropWeapon()
+    {
+        string fxName = WeaponSpawner.Weapon_1;
+        Transform fxOnDead = WeaponSpawner.Instance.Spawn(fxName, transform.position, transform.rotation);
+        fxOnDead.gameObject.SetActive(true);
+
+    }
     public override void Reborn()
     {
         this.maxHp = this.enemyCtrl.EnemySO.hpMax;
         base.Reborn();
-
         this.enemyCtrl.EnemyStatusBar.RebornHpBar();
         
     }

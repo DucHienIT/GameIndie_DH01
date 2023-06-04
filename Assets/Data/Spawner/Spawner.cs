@@ -5,6 +5,8 @@ using UnityEngine;
 public abstract class Spawner : DucHienMonoBehaviour
 {
     [SerializeField] protected Transform holder;
+    public Transform Holder => holder;
+
     [SerializeField] protected List<Transform> prefabs;
     [SerializeField] protected List<Transform> poolObjects;
 

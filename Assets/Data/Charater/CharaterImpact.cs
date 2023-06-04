@@ -9,6 +9,13 @@ public class CharaterImpact : DucHienMonoBehaviour
 
     [SerializeField] protected bool onGround;
     public bool OnGround { get { return this.onGround; } }
+
+
+    protected override void LoadComponents()
+    {
+        base.LoadComponents();
+    }
+
     protected override void Awake()
     {
         if (CharaterImpact.instance != null)

@@ -25,5 +25,4 @@ public class DespawnByDistance : Despawn
         if (this.distance > this.disLimit) return true;
         return false;
     }
-
 }
