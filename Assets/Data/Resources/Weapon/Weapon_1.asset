@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df1786f5fd6944e44a6635737c6f77cd, type: 3}
   m_Name: Weapon_1
   m_EditorClassIdentifier: 
-  enemyName: Weapon
+  name: Weapon_1
   atk: 2
   def: 2

@@ -40,6 +40,15 @@ public class ItemLooter : DucHienMonoBehaviour
     }
     protected virtual void OnTriggerEnter(Collider other)
     {
-        Debug.unityLogger.Log(other.name, other.transform.parent.name);
+        Pickupable pickupable = other.GetComponent<Pickupable>();
+        if(pickupable == null) return;
+
+        Transform weapon = other.transform.parent;
+        ItemInventory item = new ItemInventory();
+        item.weaponSO = weapon.GetComponent<WeaponCtrl>().WeaponSO;
+        item.itemCount = 1;
+        inventory.AddItem(item);
     }
+
+
 }
