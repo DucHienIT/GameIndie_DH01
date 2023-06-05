@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -29,8 +29,9 @@ public class EnemyDamageReceiver : DamageReceiver
     protected override void OnDead()
     {
         this.enemyCtrl.EnemyDespawn.DespawnObject();
-        this.OnDeadEffect();
-        this.DropWeapon();
+        this.OnDeadEffect(); //hiệu ứng 
+        this.DropWeapon(); //rớt đồ
+        CharaterLevelManager.Instance.AddExp(this.enemyCtrl.EnemySO.exp);
     }
     protected virtual void OnDeadEffect()
     {

@@ -30,6 +30,8 @@ public class Pickupable : DucHienMonoBehaviour
 
     protected virtual void OnTriggerEnter(Collider other)
     {
+        ItemLooter itemLooter = other.GetComponent<ItemLooter>();
+        if (itemLooter == null) return;
         this.weaponCtrl.WeaponDespawn.DespawnObject();
     }
 }

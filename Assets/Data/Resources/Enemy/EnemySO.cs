@@ -7,4 +7,5 @@ public class EnemySO : ScriptableObject
 {
     public string enemyName = "Enemy";
     public int hpMax = 10;
+    public int exp = 10;
 }

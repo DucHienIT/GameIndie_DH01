@@ -271,7 +271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   bulletCtrl: {fileID: 1589108690}
-  charaterStatus: {fileID: 0}
+  charaterStatus: {fileID: 2117117062}
 --- !u!4 &99010401
 Transform:
   m_ObjectHideFlags: 0
@@ -4177,6 +4177,54 @@ Transform:
   m_Father: {fileID: 1559555995}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1995594413
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1995594414}
+  - component: {fileID: 1995594415}
+  m_Layer: 0
+  m_Name: CharaterLevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1995594414
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995594413}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2117117059}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1995594415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995594413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abca404906bca8047917cbd3a698bae4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelData: []
+  currentLevelIndex: 1
+  currentExp: 0
+  currentExpToNextLevel: 0
 --- !u!1 &1997770799
 GameObject:
   m_ObjectHideFlags: 0
@@ -4396,6 +4444,7 @@ Transform:
   - {fileID: 408490721}
   - {fileID: 854890526}
   - {fileID: 2001599196}
+  - {fileID: 1995594414}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4446,9 +4495,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  attackPower: 10
+  attackPower: 4
   movementSpeed: 5
   inventory: {fileID: 2001599197}
+  charaterSO: {fileID: 11400000, guid: b8dcb57a7bd1b7d42b62b49f4966d9fe, type: 2}
+  charaterLevel: 1
+  exp: 0
 --- !u!1 &2132445058
 GameObject:
   m_ObjectHideFlags: 0
