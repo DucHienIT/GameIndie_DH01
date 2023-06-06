@@ -8,25 +8,25 @@
 
 # Max Fire
 
-
-Max Fire is an action-packed 2D shooting game that offers fast-paced gameplay, requiring skill and presenting a high level of challenge.
+Max Fire is an action-packed 2D shooting game that offers limitless battles against enemies, leveling up your character, collecting loot, and unlocking new abilities.
 
 ## Description
 
-In Max Fire, players will engage in thrilling battles, traversing through various levels, eliminating enemy forces, and completing missions. The game features intuitive controls that allow players to move their character, jump, dodge, and shoot.
+In Max Fire, players will embark on an endless combat journey, facing hordes of enemies and striving to level up their character. Engage in intense battles, defeat enemies to earn experience points, and unlock new features and enhancements as you progress. Collect valuable loot from defeated enemies to purchase powerful equipment and skills to aid you in your battles.
+
 
 ## Gameplay
 
-Players will navigate through a series of short levels, engaging in combat with different enemies, collecting power-ups, dodging obstacles, and confronting powerful bosses at the end of each level.
+The gameplay of Max Fire revolves around non-stop action and progression. Players will face waves of enemies in fast-paced battles, utilizing a variety of weapons and abilities. Defeating enemies will grant experience points, which can be used to level up your character, unlocking new skills and attributes. The game features an extensive loot system, allowing players to collect valuable items dropped by enemies, providing additional enhancements and customization options. With each level gained, players will acquire new abilities and become even more formidable in their quest.
+
 
 ## Features
 
-- Intuitive controls for smooth and responsive gameplay.
-- Diverse and challenging levels with different environments, including forests, ports, enemy bases, and unique locations.
-- Multiple playable characters, each with their own unique characteristics and skills.
-- Various types of enemies and bosses, each with their own distinct attributes, abilities, and weaknesses.
-- Engaging sound effects, including immersive background music, weapon sounds, explosions, footsteps, and character voices.
-- Visually stunning 2D pixel art graphics, featuring detailed character and enemy models.
+- Endless battles against hordes of enemies
+- Level up your character and unlock new skills
+- Collect valuable loot from defeated enemies
+- Purchase powerful equipment and abilities
+- Fast-paced and action-packed gameplay
 
 ## Installation
 
@@ -52,7 +52,7 @@ If you wish to contribute to Max Fire's development, please follow these guideli
 
 ## Credits
 
-Max Fire is created and developed by DucHienIT. Special thanks to [contributors] for their valuable contributions.
+Max Fire is created and developed by DucHienIT.
 
 Enjoy playing Max Fire!
 ![z4392135507802_ecfcbf2083652cce06815b6b9571cc76](https://github.com/DucHienIT/GameIndie_DH01/assets/88640081/9463af3a-0c7f-4744-8d8c-adcb00cdccdf)
