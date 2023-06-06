@@ -8,12 +8,13 @@ public class BulletImpact : BulletAbstract
 {
     [SerializeField] protected SphereCollider sphereCollider;
     [SerializeField] protected Rigidbody rigidbody;
-
+    
     protected override void LoadComponents()
     {
         base.LoadComponents();
         this.LoadSphereCollider();
         this.LoadRigidbody();
+        
     }
 
     protected virtual void LoadSphereCollider()
@@ -24,6 +25,7 @@ public class BulletImpact : BulletAbstract
         this.sphereCollider.radius = 0.05f;
         Debug.Log("LoadSphereCollider: " + this.sphereCollider);
     }
+    
     protected virtual void LoadRigidbody()
     {
         if (this.rigidbody != null) return;
@@ -33,6 +35,7 @@ public class BulletImpact : BulletAbstract
     }
     protected virtual void OnTriggerEnter(Collider other)
     {
-         this.BulletCtrl.DamageSender.Send(other.transform); 
+         
+         this.BulletCtrl.DamageSender.Send(other.transform);  
     }
 }

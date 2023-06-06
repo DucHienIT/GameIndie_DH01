@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharaterShoot : Shoot
+public class EnemyShoot : Shoot
 {
     [SerializeField] protected bool shooting = false;
     [SerializeField] protected float shootDelay = 0.5f;
     [SerializeField] protected float shootTimer = 0f;
-    
 
     protected override void Shooting()
     {
@@ -20,13 +19,12 @@ public class CharaterShoot : Shoot
         if (!this.shooting) return;
         this.shootTimer = 0f;
 
-
         // Tính toán góc giữa đối tượng bắn và vị trí chuột
-        Vector3 direction = this.GetMousePosition() - transform.position;
+        Vector3 direction = this.GetCharacterPositon() - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        Transform newBullet = BulletSpawner.Instance.Spawn(BulletSpawner.bulletOne, transform.position, rotation);
+        Transform newBullet = BulletSpawner.Instance.Spawn(BulletSpawner.bullet_2, transform.position, rotation);
         if (newBullet == null) return;
 
         newBullet.GetComponent<BulletCtrl>().SetShooter(transform.parent);
@@ -36,18 +34,11 @@ public class CharaterShoot : Shoot
 
     protected override void SetShooting()
     {
-        this.shooting = InputManager.Instance.OnShooting == 1;
+        this.shooting = true;
     }
 
-    protected virtual Vector3 GetMousePosition()
+    protected virtual Vector3 GetCharacterPositon()
     {
-        // Lấy vị trí chuột trên màn hình
-        Vector3 mousePosition = Input.mousePosition;
-        mousePosition.z = 10f; // Khoảng cách từ Camera đến mặt phẳng màn hình
-
-        // Chuyển đổi vị trí chuột từ không gian màn hình sang không gian thế giới
-        Vector3 targetPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-
-        return targetPosition;
+        return CharacterPosition.Instance.CharacterTransform.position;
     }    
 }

@@ -7,8 +7,6 @@ public class BulletDamageSender : DamageSender
     [SerializeField] protected BulletCtrl bulletCtrl;
     [SerializeField] protected CharaterStatus charaterStatus;
 
-
-
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -40,6 +38,8 @@ public class BulletDamageSender : DamageSender
     }
     public override void Send(DamageReceiver receiver)
     {
+        if (receiver.transform.parent.name == this.bulletCtrl.Shooter.name) return;
+
         base.Send(receiver);
         this.DestroyBullet();
     }
