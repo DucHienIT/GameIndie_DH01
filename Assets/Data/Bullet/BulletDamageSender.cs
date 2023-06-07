@@ -22,8 +22,8 @@ public class BulletDamageSender : DamageSender
     protected virtual void LoadCharaterStatus()
     {
         if (this.charaterStatus != null) return;
-        this.charaterStatus = transform.parent.GetComponent<CharaterStatus>();
-        Debug.Log(transform.name + ": LoadCharaterStatus", gameObject);
+        this.charaterStatus = PlayerCtrl.Instance.Charater.GetComponent<CharaterStatus>();
+
     }
     protected virtual void LoadBulletCtrl()
     {

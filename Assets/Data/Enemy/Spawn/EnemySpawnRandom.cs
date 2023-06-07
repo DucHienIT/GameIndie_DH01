@@ -24,10 +24,6 @@ public class EnemySpawnRandom : DucHienMonoBehaviour
         Debug.Log(transform.name + " load EnemySpawnCtrl", gameObject);
     }
 
-    protected override void Start()
-    {
-        
-    }
     protected virtual void FixedUpdate()
     {
         this.EnemySpawning();

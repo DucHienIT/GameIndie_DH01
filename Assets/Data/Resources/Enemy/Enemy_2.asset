@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: Enemy_2
   hpMax: 20
-  exp: 20
+  exp: 40
   coin: 2

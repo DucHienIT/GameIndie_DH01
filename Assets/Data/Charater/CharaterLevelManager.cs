@@ -14,4 +14,9 @@ public class CharaterLevelManager : LevelManager
             Debug.LogError("There are more than one CharaterLevelManager in the scene!");
         CharaterLevelManager.instance = this;
     }
+    protected override void UpLevel()
+    {
+        base.UpLevel();
+        AttributeTableUI.Instance.Toggle();
+    }
 }

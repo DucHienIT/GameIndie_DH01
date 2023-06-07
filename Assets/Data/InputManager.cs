@@ -34,6 +34,7 @@ public class InputManager : MonoBehaviour
         GetMovementInput();
         GetMouseDown();
         GetJumpInput();
+       
     }
 
     protected virtual void GetMovementInput()

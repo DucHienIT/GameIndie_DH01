@@ -9,12 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0a45fd5b827a044bb167462e1a016df, type: 3}
-  m_Name: Characteristic_2
+  m_Script: {fileID: 11500000, guid: 17df936e0d3a95f45b28b73beaa132e2, type: 3}
+  m_Name: Def
   m_EditorClassIdentifier: 
-  RankCharacteristic: 2
-  hpMax: 4
-  atk: 2
-  def: 2
-  spd: 2
-  atkPpd: 10
+  attributeCode: 3
+  value: 2
