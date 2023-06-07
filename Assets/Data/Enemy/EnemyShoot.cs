@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyShoot : Shoot
 {
     [SerializeField] protected bool shooting = false;
-    [SerializeField] protected float shootDelay = 0.5f;
+    [SerializeField] protected float shootDelay = 3f;
     [SerializeField] protected float shootTimer = 0f;
 
     protected override void Shooting()

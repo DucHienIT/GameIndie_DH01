@@ -42,13 +42,22 @@ public class ItemLooter : DucHienMonoBehaviour
     {
         Pickupable pickupable = other.GetComponent<Pickupable>();
         if(pickupable == null) return;
-
         Transform weapon = other.transform.parent;
+        if(LootCoin(weapon)) return;
+
         ItemInventory item = new ItemInventory();
         item.weaponSO = weapon.GetComponent<WeaponCtrl>().WeaponSO;
         item.itemCount = 1;
         inventory.AddItem(item);
     }
 
-
+    protected virtual bool LootCoin(Transform item)
+    {
+        if(item.name == "Coin")
+        {
+            inventory.AddCoin(item.GetComponent<CoinCtrl>().CoinValue);
+            return true;
+        }
+        return false;
+    }
 }

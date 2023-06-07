@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b727685f4ebad543885bbc6bdb3c368, type: 3}
   m_Name: Enemy_2
   m_EditorClassIdentifier: 
-  enemyName: Enemy
+  enemyName: Enemy_2
   hpMax: 20
+  exp: 20
+  coin: 2

@@ -30,7 +30,7 @@ public class EnemyDamageReceiver : DamageReceiver
     {
         this.enemyCtrl.EnemyDespawn.DespawnObject();
         this.OnDeadEffect(); //hiệu ứng 
-        this.DropWeapon(); //rớt đồ
+        this.DropCoin(); //rớt tiền
         CharaterLevelManager.Instance.AddExp(this.enemyCtrl.EnemySO.exp);
     }
     protected virtual void OnDeadEffect()
@@ -38,15 +38,14 @@ public class EnemyDamageReceiver : DamageReceiver
         string fxName = EffectSpawner.effect_1;
         Transform fxOnDead = EffectSpawner.Instance.Spawn(fxName, transform.position, transform.rotation);
         fxOnDead.gameObject.SetActive(true);
-
     }
 
-    protected virtual void DropWeapon()
+    protected virtual void DropCoin()
     {
-        string fxName = WeaponSpawner.Weapon_1;
-        Transform fxOnDead = WeaponSpawner.Instance.Spawn(fxName, transform.position, transform.rotation);
-        fxOnDead.gameObject.SetActive(true);
-
+        string coin = CoinSpawner.Coin;
+        Transform coinTransform = CoinSpawner.Instance.Spawn(coin, transform.position, transform.rotation);
+        coinTransform.gameObject.SetActive(true);
+        coinTransform.GetComponent<CoinCtrl>().SetCoinValue(this.enemyCtrl.EnemySO.coin);
     }
     public override void Reborn()
     {

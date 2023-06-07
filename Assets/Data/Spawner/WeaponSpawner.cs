@@ -8,7 +8,6 @@ public class WeaponSpawner : Spawner
     public static WeaponSpawner Instance { get { return instance; } }
 
     public static string Weapon_1 = "Weapon_1";
-   
 
     protected override void Awake()
     {

@@ -9,10 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b727685f4ebad543885bbc6bdb3c368, type: 3}
-  m_Name: Enemy_1
+  m_Script: {fileID: 11500000, guid: c0a45fd5b827a044bb167462e1a016df, type: 3}
+  m_Name: Characteristic_1
   m_EditorClassIdentifier: 
-  enemyName: Enemy_1
-  hpMax: 10
-  exp: 10
-  coin: 1
+  RankCharacteristic: 1
+  hpMax: 2
+  atk: 1
+  def: 1
+  spd: 1
+  atkPpd: 5

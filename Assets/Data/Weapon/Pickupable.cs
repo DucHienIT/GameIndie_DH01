@@ -6,7 +6,7 @@ using UnityEngine;
 public class Pickupable : DucHienMonoBehaviour
 {
     [SerializeField] protected SphereCollider sphereCollider;
-    [SerializeField] protected WeaponCtrl weaponCtrl;
+    [SerializeField] protected CoinCtrl coinCtrl;
 
     protected override void LoadComponents()
     {
@@ -16,8 +16,8 @@ public class Pickupable : DucHienMonoBehaviour
     }
     protected virtual void LoadWeaponCtrl()
     {
-        if(this.weaponCtrl != null) return;
-        this.weaponCtrl = transform.parent.GetComponent<WeaponCtrl>();
+        if(this.coinCtrl != null) return;
+        this.coinCtrl = transform.parent.GetComponent<CoinCtrl>();
     }
     protected virtual void LoadSphereCollider()
     {
@@ -32,6 +32,6 @@ public class Pickupable : DucHienMonoBehaviour
     {
         ItemLooter itemLooter = other.GetComponent<ItemLooter>();
         if (itemLooter == null) return;
-        this.weaponCtrl.WeaponDespawn.DespawnObject();
+        this.coinCtrl.CoinDespawn.DespawnObject();
     }
 }
