@@ -16,7 +16,6 @@ public class InputManager : MonoBehaviour
     [SerializeField] protected float onShooting;
     public float OnShooting { get { return this.onShooting; } }
 
-
     [SerializeField] protected bool isJumping;
     public bool IsJumping { get { return this.isJumping; } }
 

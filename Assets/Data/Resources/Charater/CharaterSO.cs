@@ -10,4 +10,5 @@ public class CharaterSO : ScriptableObject
     public int atk = 4;
     public int def = 2;
     public int spd = 2;
+    public int atkSpd = 5;
 }

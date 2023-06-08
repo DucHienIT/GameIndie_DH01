@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CharaterStatus : Status
 {
+    private static CharaterStatus instance;
+    public static CharaterStatus Instance { get { return instance; } }
+
     [SerializeField] protected Inventory inventory;
     [SerializeField] protected CharaterSO charaterSO;
     [SerializeField] protected int charaterLevel = 1;
@@ -13,6 +16,11 @@ public class CharaterStatus : Status
     public int Health => health;
     public int AttackPower => attackPower;
 
+    protected override void Awake()
+    {
+        base.Awake();
+        CharaterStatus.instance = this;
+    }
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -26,6 +34,8 @@ public class CharaterStatus : Status
         if (this.charaterSO != null) return;
         string path = "Charater/" + transform.name;
         this.charaterSO = Resources.Load<CharaterSO>(path);
+
+        this.LoadCharaterStatus();
     }
     protected virtual void LoadInventory()
     {
@@ -34,7 +44,6 @@ public class CharaterStatus : Status
     }
     protected override void UpdateStatus()
     {
-        this.CalculateStatus();
         this.UpdateLevel();
     }
 
@@ -44,16 +53,32 @@ public class CharaterStatus : Status
         this.exp = CharaterLevelManager.Instance.CurrentExp;
     }
 
-    protected virtual void CalculateStatus()
+    public virtual void CalculateStatus(AttributeCode attributeCode, int value)
     {
-        int hp = charaterSO.hpMax; //sửa lại sau
-        int atk = charaterSO.atk;
-        foreach (ItemInventory item in inventory.ListWeapons)
+        if(attributeCode == AttributeCode.Atk)
         {
-            hp += item.weaponSO.hp * item.itemCount;
-            atk += item.weaponSO.atk * item.itemCount;
+            this.attackPower += value;
         }
-        this.health = hp;
-        this.attackPower = atk;
+        else if(attributeCode == AttributeCode.Def)
+        {
+            this.def += value;
+        }
+        else if(attributeCode == AttributeCode.Hp)
+        {
+            this.health += value;
+        }
+        else if(attributeCode == AttributeCode.SpeedAtk)
+        {
+            this.attackSpeed += value;
+        }   
+    }
+    
+    protected virtual void LoadCharaterStatus()
+    {
+        this.health = this.charaterSO.hpMax;
+        this.attackPower = this.charaterSO.atk;
+        this.movementSpeed = this.charaterSO.spd;
+        this.attackSpeed = this.charaterSO.atkSpd;
+        this.def = this.charaterSO.def;
     }
 }

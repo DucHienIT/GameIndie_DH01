@@ -26,6 +26,7 @@ public class AttributeTableUI : DucHienMonoBehaviour
     {
         if (!this.isOpen) return;
         this.UpdateAttributeTable();
+        GameCtrl.Instance.PauseGame();
     }
 
     public virtual void Toggle()
@@ -41,8 +42,7 @@ public class AttributeTableUI : DucHienMonoBehaviour
         }
     }    
     public virtual void Open()
-    {
-        
+    {  
         gameObject.SetActive(true);
     }
     public virtual void Close()
@@ -60,7 +60,5 @@ public class AttributeTableUI : DucHienMonoBehaviour
             obj.gameObject.SetActive(true);
         }
         this.currentItemCount += AttributeItemSpawner.Instance.ItemList.Count;
-        Debug.Log("currentItemCount: " + this.currentItemCount);
     }
-
 }

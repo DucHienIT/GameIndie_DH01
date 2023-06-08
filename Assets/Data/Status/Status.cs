@@ -6,7 +6,10 @@ public abstract class Status : DucHienMonoBehaviour
 {
     [SerializeField] protected int health = 100;
     [SerializeField] protected int attackPower = 4;
-    [SerializeField] protected float movementSpeed = 5f;
+    [SerializeField] protected int movementSpeed = 5;
+    [SerializeField] protected int attackSpeed = 1;
+    [SerializeField] protected int def = 1;
+
     
 
     protected abstract void UpdateStatus();

@@ -13,6 +13,9 @@ public class AttributeItemCtrl : DucHienMonoBehaviour
 
     [SerializeField] protected AttributeItemValue attributeItemValue;
     public AttributeItemValue AttributeItemValue { get { return attributeItemValue; } }
+
+    [SerializeField] protected Button click;
+    public Button Click { get { return click; } }
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -20,6 +23,7 @@ public class AttributeItemCtrl : DucHienMonoBehaviour
         this.LoadText();
         this.LoadAttributeItemValue();
         this.UpdateText();
+        this.LoadButtonClick();
     }
     protected virtual void LoadAttributeItemSO()
     {
@@ -37,11 +41,15 @@ public class AttributeItemCtrl : DucHienMonoBehaviour
         if (this.attributeItemValue != null) return;
         this.attributeItemValue = GetComponentInChildren<AttributeItemValue>();
     }
+    protected virtual void LoadButtonClick()
+    {
+        if (this.click != null) return;
+        this.click = GetComponentInChildren<Button>();
+    }
 
     protected virtual void UpdateText()
     {
         if (this.text == null) return;
         this.text.text = this.transform.name + ": " + this.attributeItemValue.Value;
     }
-
 }
