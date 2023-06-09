@@ -36,6 +36,12 @@ To play Max Fire, follow these steps:
 2. Install the required dependencies.
 3. Run the game executable.
 
+## How to play
+- A, D: Move left, right
+- Space: Jump
+- Right mouse: Shoot
+- Left mouse: Punch
+
 ## Development
 
 If you wish to contribute to Max Fire's development, please follow these guidelines:

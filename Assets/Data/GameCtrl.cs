@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameCtrl : DucHienMonoBehaviour
 {
@@ -13,6 +14,11 @@ public class GameCtrl : DucHienMonoBehaviour
         if(GameCtrl.instance != null)
             Debug.LogError("GameCtrl is already exist");
         GameCtrl.instance = this;
+    }
+
+    public virtual void StartGame()
+    {
+        SceneManager.LoadScene("MainGame");
     }
 
     public virtual void PauseGame()

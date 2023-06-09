@@ -148,7 +148,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3021711}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.2341, y: 0, z: 0}
+  m_LocalPosition: {x: 0.1594, y: 0, z: 0}
   m_LocalScale: {x: 1.0619, y: 1.0619, z: 1.0619}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -201,7 +201,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 16.788647, y: 3.24}
+  m_Size: {x: 9, y: 3.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1567,7 +1567,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 358366221}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.36, y: -0.54, z: 0}
+  m_LocalPosition: {x: -4.04, y: -0.54, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2098,7 +2098,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 504674348}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.78, y: -2.51, z: 0}
+  m_LocalPosition: {x: 5.17, y: -2.55, z: 0}
   m_LocalScale: {x: 62.031883, y: 7.571734, z: 7.571734}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2493,7 +2493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpawnCtrl: {fileID: 544591286}
-  enemySpawnDelay: 3
+  enemySpawnDelay: 5
   enemySpawnTimer: 0
   enemySpawnLimit: 9
 --- !u!114 &544591286
@@ -2534,7 +2534,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 569825432}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.954, y: 1.436, z: 10}
+  m_LocalPosition: {x: -2.954, y: 1.92, z: 10}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3739,6 +3739,7 @@ MonoBehaviour:
   speed: 1
   jumpPower: 4
   movementInput: {x: 0, y: 0, z: 0}
+  limitX: 4
 --- !u!1 &854890525
 GameObject:
   m_ObjectHideFlags: 0
@@ -4108,7 +4109,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 895342027}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.12, y: 1.153, z: 10}
+  m_LocalPosition: {x: -3.12, y: 1.6, z: 10}
   m_LocalScale: {x: 0.42775443, y: 0.42775443, z: 0.42775443}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5279,7 +5280,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1323718551}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.52, y: -0.52, z: 0}
+  m_LocalPosition: {x: 3.14, y: -0.37, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5934,7 +5935,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1573990039}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.52, y: -0.76, z: 0}
+  m_LocalPosition: {x: 0.4, y: -0.76, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6394,7 +6395,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1734594154}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.3212, y: -1.45, z: 0}
+  m_LocalPosition: {x: 0, y: -1.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6447,7 +6448,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 16.442383, y: 0.32}
+  m_Size: {x: 8, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -6471,13 +6472,13 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.32, y: 0.32}
-    newSize: {x: 16.442383, y: 0.32}
+    newSize: {x: 8, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 2
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 16.484468, y: 0.28087452}
+  m_Size: {x: 8, y: 0.28087452}
   m_EdgeRadius: 0
 --- !u!1 &1744554213
 GameObject:
@@ -7908,8 +7909,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ed586943fae2d34a8ef82b56d725594, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  attackPower: 50
+  health: 10
+  attackPower: 5
   movementSpeed: 2
   attackSpeed: 5
   def: 2

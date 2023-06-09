@@ -7,6 +7,7 @@ public class CharaterMovement : MonoBehaviour
     [SerializeField] protected float speed = 1f;
     [SerializeField] protected float jumpPower = 4f;
     [SerializeField] protected Vector3 movementInput;
+    [SerializeField] protected float limitX = 4f;
     private Animator animator;
     private Rigidbody2D rb;
    
@@ -47,6 +48,8 @@ public class CharaterMovement : MonoBehaviour
     {
         Vector3 movement = movementInput.normalized * speed;
         Vector3 newPosition = transform.parent.position + movement * Time.deltaTime;
+
+        if (newPosition.x > limitX || newPosition.x < -limitX) return;
         transform.parent.position = newPosition;
     }
 
