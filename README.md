@@ -32,7 +32,7 @@ The gameplay of Max Fire revolves around non-stop action and progression. Player
 
 To play Max Fire, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/DucHienIT/GameIndie_DH01.git`
+1. Clone the repository and switch branch build: `git clone https://github.com/DucHienIT/GameIndie_DH01.git`
 2. Install the required dependencies.
 3. Run the game executable.
 
