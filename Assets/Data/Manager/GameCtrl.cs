@@ -19,6 +19,7 @@ public class GameCtrl : DucHienMonoBehaviour
     public virtual void StartGame()
     {
         SceneManager.LoadScene("MainGame");
+        
     }
 
     public virtual void PauseGame()

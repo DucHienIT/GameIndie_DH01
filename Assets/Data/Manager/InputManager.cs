@@ -23,9 +23,12 @@ public class InputManager : MonoBehaviour
     {
         if (InputManager.instance != null)
         {
-            Debug.LogError("There is more than one InputManager in the scene!");
+            Destroy(this.gameObject);
+            return;
         }
         InputManager.instance = this;
+
+        DontDestroyOnLoad(this.gameObject);
     }
 
     void Update()
@@ -33,7 +36,7 @@ public class InputManager : MonoBehaviour
         GetMovementInput();
         GetMouseDown();
         GetJumpInput();
-       
+        GetOpenInventory();
     }
 
     protected virtual void GetMovementInput()
@@ -61,5 +64,13 @@ public class InputManager : MonoBehaviour
     protected virtual void GetJumpInput()
     {
         this.isJumping = Input.GetKeyDown(KeyCode.Space);
+    }
+
+    protected virtual void GetOpenInventory()
+    {
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            InventoryManager.Instance.Toggle();
+        }
     }
 }
