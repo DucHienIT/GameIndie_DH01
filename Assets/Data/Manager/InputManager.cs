@@ -71,7 +71,7 @@ public class InputManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
-            InventoryManager.Instance.Toggle();
+            
         }
     }
 }

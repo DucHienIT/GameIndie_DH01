@@ -10,16 +10,27 @@ public class PlayerCtrl : DucHienMonoBehaviour
     [SerializeField] protected CharaterCtrl charater;
     public CharaterCtrl Charater => charater;
 
+    [SerializeField] protected CharaterStatus status;
+    public CharaterStatus Status => status;
+
     protected override void Awake()
     {
         base.Awake();
+        if (PlayerCtrl.instance != null)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
         PlayerCtrl.instance = this;
+
+        DontDestroyOnLoad(this.gameObject);
     }
 
     protected override void LoadComponents()
     {
         base.LoadComponents();
         this.LoadCharater();
+        this.LoadStatus();
     }
 
     protected virtual void LoadCharater()
@@ -27,5 +38,11 @@ public class PlayerCtrl : DucHienMonoBehaviour
         if (this.charater != null) return;
         this.charater = GetComponentInChildren<CharaterCtrl>();
         Debug.Log("Load Charater");
+    }
+    protected virtual void LoadStatus()
+    {
+        if (this.status != null) return;
+        this.status = GetComponentInChildren<CharaterStatus>();
+        Debug.Log("Load Status");
     }
 }

@@ -9,6 +9,7 @@ public class InventoryManager : DucHienMonoBehaviour
     public static InventoryManager Instance { get { return instance; } }
 
     [SerializeField] protected bool isOpen = false;
+    public bool IsOpen => isOpen;
 
     protected override void Awake()
     {

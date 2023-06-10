@@ -53,8 +53,7 @@ public class InventoryCtrl : DucHienMonoBehaviour
         WeaponSO weaponSO = item.GetComponent<WeaponCtrl>().WeaponSO;
         ItemInventory itemInventory = new ItemInventory(weaponSO, 1);
         this.inventory.AddItem(itemInventory);
-
-
+        this.CalculateExtraAttributeWeapon(weaponSO);
         this.SaveInventory(); //Test save inventory
     }    
 
@@ -108,5 +107,11 @@ public class InventoryCtrl : DucHienMonoBehaviour
 
     }
 
-
+    protected virtual void CalculateExtraAttributeWeapon(WeaponSO weapon)
+    {
+        foreach (Attribute attribute in weapon.Attribute)
+        {
+            PlayerCtrl.Instance.Status.CalculateStatus(attribute.attributeCode, attribute.value);
+        }
+    }
 }

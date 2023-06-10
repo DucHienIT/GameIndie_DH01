@@ -36,6 +36,7 @@ public class RoundManager : DucHienMonoBehaviour
         this.Round++;
         PlayerPrefs.SetInt("Round", this.Round);
         PlayerPrefs.Save();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+        InventoryManager.Instance.Toggle();
     }
 }
