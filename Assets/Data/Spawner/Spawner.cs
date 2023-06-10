@@ -90,7 +90,6 @@ public abstract class Spawner : DucHienMonoBehaviour
         this.poolObjects.Add(prefab);
         prefab.gameObject.SetActive(false);
         this.spawnedCount--;
-
     }
 
     public virtual Transform GetprefabByName(string prefabName)

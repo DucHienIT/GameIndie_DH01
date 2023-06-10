@@ -45,9 +45,7 @@ public class ItemLooter : DucHienMonoBehaviour
         Transform weapon = other.transform.parent;
         if(LootCoin(weapon)) return;
 
-        ItemInventory item = new ItemInventory();
-        item.weaponSO = weapon.GetComponent<WeaponCtrl>().WeaponSO;
-        item.itemCount = 1;
+        ItemInventory item = new ItemInventory(weapon.GetComponent<WeaponCtrl>().WeaponSO, 1);
         inventory.AddItem(item);
     }
 

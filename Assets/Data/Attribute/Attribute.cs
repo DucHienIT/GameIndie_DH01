@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class AttributeItem
+public class Attribute
 {
-    
+    public AttributeCode attributeCode;
+    public int value;
 }

@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: Weapon_1
   m_EditorClassIdentifier: 
   name: Weapon_1
-  atk: 2
-  def: 2
+  Attribute:
+  - attributeCode: 1
+    value: 2
+  - attributeCode: 2
+    value: 1
