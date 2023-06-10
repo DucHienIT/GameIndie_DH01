@@ -13,5 +13,6 @@ public class ItemInventory
     {
         this.weaponSO = weaponSO;
         this.itemCount = itemCount;
+        
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class InventoryCtrl : DucHienMonoBehaviour
 {
@@ -52,6 +53,9 @@ public class InventoryCtrl : DucHienMonoBehaviour
         WeaponSO weaponSO = item.GetComponent<WeaponCtrl>().WeaponSO;
         ItemInventory itemInventory = new ItemInventory(weaponSO, 1);
         this.inventory.AddItem(itemInventory);
+
+
+        this.SaveInventory(); //Test save inventory
     }    
 
     protected virtual bool CheckItemInInventory(Transform item)
@@ -84,5 +88,25 @@ public class InventoryCtrl : DucHienMonoBehaviour
             }
         }
     }
+
+    protected virtual void SaveInventory()
+    {
+        List<string> nameItem = new List<string>();
+        List<int> amoutItem = new List<int>();
+        foreach (ItemInventory item in this.inventory.ListWeapons)
+        {
+            nameItem.Add(item.weaponSO.name);
+            amoutItem.Add(item.itemCount);
+        }
+
+        InventoryData inventoryData = new InventoryData(nameItem, amoutItem);
+
+        string json = JsonUtility.ToJson(inventoryData);
+
+        Debug.Log(json);
+        PlayerPrefs.SetString("Inventory", json);
+
+    }
+
 
 }

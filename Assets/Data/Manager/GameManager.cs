@@ -8,6 +8,6 @@ public class GameManager : DucHienMonoBehaviour
     private void OnApplicationQuit()
     {
         Debug.Log("Game is quitting...");
-        PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
     }
 }

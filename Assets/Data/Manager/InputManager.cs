@@ -19,6 +19,7 @@ public class InputManager : MonoBehaviour
     [SerializeField] protected bool isJumping;
     public bool IsJumping { get { return this.isJumping; } }
 
+    InventoryData inventoryData;
     private void Awake()
     {
         if (InputManager.instance != null)

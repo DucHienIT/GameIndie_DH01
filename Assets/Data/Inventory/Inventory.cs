@@ -25,6 +25,7 @@ public class Inventory : DucHienMonoBehaviour
         if (this.weapons.Count >= this.maxSlot) return false;
         if (checkItemInInventory(item)) return false;
         this.weapons.Add(item);
+
         return true;
     }
     public virtual void AddCoin(int coin)
@@ -48,4 +49,6 @@ public class Inventory : DucHienMonoBehaviour
     {
         
     }
+
+
 }
