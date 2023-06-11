@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,7 +14,7 @@ public class DisplayCoin : DucHienMonoBehaviour
         this.LoadLevelText();
 
     }
-    protected virtual void FixedUpdate()
+    protected virtual void Update()
     {
         this.UpdateLevelText();
     }
@@ -23,6 +25,7 @@ public class DisplayCoin : DucHienMonoBehaviour
     }
     protected virtual void UpdateLevelText()
     {
-        this.levelText.text = Inventory.Instance.TotelCoin.ToString();
+        this.levelText.text = PlayerCtrl.Instance.Charater.Inventory.TotelCoin.ToString(); 
     }
+
 }
