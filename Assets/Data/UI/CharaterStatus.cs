@@ -81,4 +81,9 @@ public class CharaterStatus : Status
         this.attackSpeed = this.charaterSO.atkSpd;
         this.def = this.charaterSO.def;
     }
+
+    public virtual void UpdateHeth(int value)
+    {
+        this.health += value;
+    }
 }

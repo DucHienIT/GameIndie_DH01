@@ -7,6 +7,7 @@ public class BulletDamageSender : DamageSender
     [SerializeField] protected BulletCtrl bulletCtrl;
     [SerializeField] protected CharaterStatus charaterStatus;
 
+
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -34,7 +35,9 @@ public class BulletDamageSender : DamageSender
 
     protected virtual void UpdateDamage()
     {
+        if (!this.bulletCtrl.ShooterIsPlayer) return;
         this.damage = this.charaterStatus.AttackPower;
+
     }
     public override void Send(DamageReceiver receiver)
     {

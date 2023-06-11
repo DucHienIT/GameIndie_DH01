@@ -13,6 +13,10 @@ public class BulletCtrl : DucHienMonoBehaviour
     [SerializeField] protected Transform shooter;
     public Transform Shooter => shooter;
 
+    [SerializeField] protected bool shooterIsPlayer = true;
+    public bool ShooterIsPlayer => shooterIsPlayer;
+
+
     protected override void LoadComponents()
     {
         base.LoadComponents();
