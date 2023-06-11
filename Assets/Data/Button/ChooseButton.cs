@@ -6,7 +6,7 @@ public class ChooseButton : BaseButton
 {
     protected override void OnClick()
     {
-        InventoryCtrl.Instance.AddItem(this.transform.parent);
+        if (!InventoryCtrl.Instance.AddItem(this.transform.parent)) return;
         StoreTableRandom.Instance.DespawnItemPick(this.transform.parent);
     }
 }

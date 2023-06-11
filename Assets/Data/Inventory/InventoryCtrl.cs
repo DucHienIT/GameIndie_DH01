@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
 
 public class InventoryCtrl : DucHienMonoBehaviour
 {
@@ -40,14 +39,21 @@ public class InventoryCtrl : DucHienMonoBehaviour
 
     }
 
-    public virtual void AddItem(Transform item)
+    public virtual bool AddItem(Transform item)
     {
+        if (!CheckEnoughCoin(item))
+        {
+            Debug.Log("Not enough coin");
+            return false;
+        }
         this.AddItemIntoInventory(item);
-        if (CheckItemInInventory(item)) return;
+        if (CheckItemInInventory(item)) return true;
         Transform newTransform = Instantiate(item);
         this.TurnOffButton(newTransform);
         newTransform.localScale = new Vector3(0.2f, 0.2f, 1);
         newTransform.parent = this.content;
+
+        return true;
     }   
     protected virtual void AddItemIntoInventory(Transform item)
     {
@@ -116,5 +122,15 @@ public class InventoryCtrl : DucHienMonoBehaviour
         {
             PlayerCtrl.Instance.Status.CalculateStatus(attribute.attributeCode, attribute.value);
         }
+    }
+
+    protected virtual bool CheckEnoughCoin(Transform item)
+    {
+        WeaponSO weaponSO = item.GetComponent<WeaponCtrl>().WeaponSO;
+        if (this.inventory.TotelCoin < weaponSO.price) return false;
+        
+        PlayerCtrl.Instance.Charater.Inventory.AddCoin(-weaponSO.price);
+        return true;
+
     }
 }
