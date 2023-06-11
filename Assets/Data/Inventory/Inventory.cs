@@ -11,13 +11,17 @@ public class Inventory : DucHienMonoBehaviour
     [SerializeField] protected int maxSlot = 70;
     [SerializeField] protected List<ItemInventory> weapons;
     [SerializeField] protected int totelCoin = 0;
+    public int TotelCoin => totelCoin;
     public List<ItemInventory> ListWeapons => weapons;
 
     protected override void Awake()
     {
         base.Awake();
         if (Inventory.instance != null)
-            Debug.LogError("Inventory is already in the scene");
+        {
+            Destroy(this.gameObject);
+            return;
+        }
         Inventory.instance = this;
     }
     public virtual bool AddItem(ItemInventory item)

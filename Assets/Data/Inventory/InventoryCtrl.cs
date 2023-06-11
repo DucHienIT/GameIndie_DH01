@@ -35,8 +35,9 @@ public class InventoryCtrl : DucHienMonoBehaviour
     }
     protected virtual void LoadInventory()
     {
-        if (this.inventory != null) return;
-        this.inventory = GetComponent<Inventory>();
+        if (PlayerCtrl.Instance == null) return;
+        this.inventory = PlayerCtrl.Instance.Charater.Inventory;
+
     }
 
     public virtual void AddItem(Transform item)
@@ -72,7 +73,9 @@ public class InventoryCtrl : DucHienMonoBehaviour
     protected virtual void TurnOffButton(Transform parent)
     {
         Button button = parent.GetComponentInChildren<Button>();
+        GameObject text = parent.Find("Price").gameObject;
         button.enabled = false;
+        text.SetActive(false);
     }    
 
     protected virtual void AddNumberItemText(Transform parent)
@@ -102,13 +105,13 @@ public class InventoryCtrl : DucHienMonoBehaviour
 
         string json = JsonUtility.ToJson(inventoryData);
 
-        Debug.Log(json);
         PlayerPrefs.SetString("Inventory", json);
 
     }
 
     protected virtual void CalculateExtraAttributeWeapon(WeaponSO weapon)
     {
+        if (PlayerCtrl.Instance == null) return;
         foreach (Attribute attribute in weapon.Attribute)
         {
             PlayerCtrl.Instance.Status.CalculateStatus(attribute.attributeCode, attribute.value);

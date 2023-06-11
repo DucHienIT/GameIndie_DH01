@@ -27,6 +27,7 @@ public class StoreTableRandom : DucHienMonoBehaviour
     {
         if (WeaponSpawner.Instance == null) return;
         if(WeaponSpawner.Instance.Holder.childCount > 0) this.DespawnActiveItem();
+            
         int itemSpawnCount = 0;
         while (itemSpawnCount < this.itemSpawnLimit)
         {
@@ -51,5 +52,11 @@ public class StoreTableRandom : DucHienMonoBehaviour
             if (!child.gameObject.activeSelf) continue;
             child.GetComponentInChildren<Despawn>().DespawnObject();
         }
-    }   
+    }
+
+    public virtual void DespawnItemPick(Transform item)
+    {
+        WeaponSpawner.Instance.Despawn(item);
+    }    
+
 }

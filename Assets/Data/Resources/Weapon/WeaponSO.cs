@@ -7,5 +7,6 @@ public class WeaponSO : ScriptableObject
 {
     public string name = "Weapon_1";
     public List<Attribute> Attribute;
+    public int price = 1;
 
 }

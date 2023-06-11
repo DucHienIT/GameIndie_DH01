@@ -28,15 +28,15 @@ public class RoundManager : DucHienMonoBehaviour
     }
     protected virtual void LoadRoud()
     {
-        this.Round = PlayerPrefs.GetInt("Round", 1);
-        Debug.Log("Load Round: " + this.Round);
+        //this.Round = PlayerPrefs.GetInt("Round", 1);
+        //Debug.Log("Load Round: " + this.Round);
+        this.Round = 1;
     }
     public virtual void NextRound()
     {
         this.Round++;
-        PlayerPrefs.SetInt("Round", this.Round);
-        PlayerPrefs.Save();
-
+       // PlayerPrefs.SetInt("Round", this.Round);
+       // PlayerPrefs.Save();
         InventoryManager.Instance.Toggle();
     }
 }
