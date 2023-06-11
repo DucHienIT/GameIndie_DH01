@@ -15,6 +15,7 @@ public class EnemyMovement : DucHienMonoBehaviour
         base.LoadComponents();
         this.LoadEnemyModel();
         animator = transform.parent.GetComponentInChildren<Animator>();
+        this.LoadPlayer();
     }
 
     protected virtual void LoadEnemyModel()
@@ -22,6 +23,11 @@ public class EnemyMovement : DucHienMonoBehaviour
         if (this.enemyModel != null) return;
         this.enemyModel = transform.parent.Find("Model");
    
+    }
+    protected virtual void LoadPlayer()
+    {
+        if (this.player != null) return;
+        this.player = PlayerCtrl.Instance.CharacterPositon;
     }
 
 
@@ -43,7 +49,7 @@ public class EnemyMovement : DucHienMonoBehaviour
         {
             enemyModel.rotation = Quaternion.Euler(0f, 180f, 0f);
         }
-        else if (direction.x > 0) // Ấn phím D, quay qua phải
+        else if (direction.x > 0) 
         {
             enemyModel.rotation = Quaternion.Euler(0f, 0f, 0f);
         }

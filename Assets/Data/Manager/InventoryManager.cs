@@ -39,10 +39,12 @@ public class InventoryManager : DucHienMonoBehaviour
     public virtual void Open()
     {
         SceneLoadManager.Instance.LoadNewScene("Store");
+        GameCtrl.Instance.PauseGame();
     }
 
     public virtual void Close()
     {
         SceneLoadManager.Instance.ExitCurrentScene();
+        GameCtrl.Instance.ResumeGame();
     }
 }

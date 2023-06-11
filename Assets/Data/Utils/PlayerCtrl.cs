@@ -13,6 +13,9 @@ public class PlayerCtrl : DucHienMonoBehaviour
     [SerializeField] protected CharaterStatus status;
     public CharaterStatus Status => status;
 
+    [SerializeField] protected Transform characterPositon;
+    public Transform CharacterPositon => characterPositon;
+
     protected override void Awake()
     {
         base.Awake();
@@ -31,6 +34,7 @@ public class PlayerCtrl : DucHienMonoBehaviour
         base.LoadComponents();
         this.LoadCharater();
         this.LoadStatus();
+        this.LoadCharacterPositon();
     }
 
     protected virtual void LoadCharater()
@@ -45,4 +49,10 @@ public class PlayerCtrl : DucHienMonoBehaviour
         this.status = GetComponentInChildren<CharaterStatus>();
         Debug.Log("Load Status");
     }
+    protected virtual void LoadCharacterPositon()
+    {
+        if (characterPositon != null) return;
+        this.characterPositon = this.transform.GetChild(0);
+    }
+
 }

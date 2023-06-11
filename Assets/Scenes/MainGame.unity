@@ -3028,10 +3028,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 631724479}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a08b0cdc23cd158499b50cc4b68af305, type: 3}
+  m_Script: {fileID: 11500000, guid: c838f6f04f9993a4581b04cfe7f43662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 2117117059}
+  target: {fileID: 0}
   speed: 2
 --- !u!1 &700757475
 GameObject:
@@ -4814,7 +4814,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Round: {fileID: 1095599691}
   TimeText: {fileID: 289830654}
-  roundTime: 30
+  roundTime: 10
 --- !u!1 &1095599690
 GameObject:
   m_ObjectHideFlags: 0
@@ -5051,6 +5051,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charater: {fileID: 2117117063}
   status: {fileID: 2117117062}
+  characterPositon: {fileID: 2117117059}
 --- !u!1 &1182526331
 GameObject:
   m_ObjectHideFlags: 0

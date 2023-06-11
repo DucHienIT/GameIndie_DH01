@@ -14,7 +14,8 @@ public class CharacterPosition : MonoBehaviour
     {
         if (CharacterPosition.instance != null)
         {
-            Debug.LogError("There is more than one CharacterPosition in the scene!");
+            Destroy(this.gameObject);
+            return;
         }
         CharacterPosition.instance = this;
     }

@@ -20,7 +20,8 @@ public class CharaterImpact : DucHienMonoBehaviour
     {
         if (CharaterImpact.instance != null)
         {
-            Debug.LogError("There is more than one CharaterImpact in the scene!");
+            Destroy(this.gameObject);
+            return;
         }
         CharaterImpact.instance = this;
     }

@@ -10,8 +10,12 @@ public class CharaterLevelManager : LevelManager
     protected override void Awake()
     {
         base.Awake();
-        if (CharaterLevelManager.instance != null) 
-            Debug.LogError("There are more than one CharaterLevelManager in the scene!");
+        if (CharaterLevelManager.instance != null)
+        {
+            Destroy(this.gameObject);
+            return;
+        } 
+            
         CharaterLevelManager.instance = this;
     }
     protected override void UpLevel()

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FollowTarget : DucHienMonoBehaviour
@@ -7,11 +8,11 @@ public class FollowTarget : DucHienMonoBehaviour
     [SerializeField] protected Transform target;
     [SerializeField] protected float speed = 2f;
 
-
     protected virtual void Update()
     {
         this.Following();
     }
+
 
     protected virtual void Following()
     {

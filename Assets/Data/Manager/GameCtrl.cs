@@ -12,7 +12,10 @@ public class GameCtrl : DucHienMonoBehaviour
     {
         base.Awake();
         if(GameCtrl.instance != null)
-            Debug.LogError("GameCtrl is already exist");
+        {
+            Destroy(this.gameObject);
+            return;
+        }
         GameCtrl.instance = this;
     }
 
