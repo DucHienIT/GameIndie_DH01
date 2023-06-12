@@ -136,7 +136,6 @@ Library: lib_burst_generated
 --root-assembly=D:\TU_HOC\Game2D\GameIndie_DH01\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
 --root-assembly=D:\TU_HOC\Game2D\GameIndie_DH01\Temp\StagingArea\Data\Managed\Unity.Burst.dll
 --root-assembly=D:\TU_HOC\Game2D\GameIndie_DH01\Temp\StagingArea\Data\Managed\Unity.2D.Animation.Runtime.dll
---root-assembly=D:\TU_HOC\Game2D\GameIndie_DH01\Temp\StagingArea\Data\Managed\Unity.TextMeshPro.dll
 --root-assembly=D:\TU_HOC\Game2D\GameIndie_DH01\Temp\StagingArea\Data\Managed\Unity.Timeline.dll
 --root-assembly=D:\TU_HOC\Game2D\GameIndie_DH01\Temp\StagingArea\Data\Managed\Unity.2D.SpriteShape.Runtime.dll
 --root-assembly=D:\TU_HOC\Game2D\GameIndie_DH01\Temp\StagingArea\Data\Managed\Unity.2D.PixelPerfect.dll
@@ -288,7 +287,6 @@ Library: lib_burst_generated
 --root-assembly=D:\TU_HOC\Game2D\GameIndie_DH01\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
 --root-assembly=D:\TU_HOC\Game2D\GameIndie_DH01\Temp\StagingArea\Data\Managed\Unity.Burst.dll
 --root-assembly=D:\TU_HOC\Game2D\GameIndie_DH01\Temp\StagingArea\Data\Managed\Unity.2D.Animation.Runtime.dll
---root-assembly=D:\TU_HOC\Game2D\GameIndie_DH01\Temp\StagingArea\Data\Managed\Unity.TextMeshPro.dll
 --root-assembly=D:\TU_HOC\Game2D\GameIndie_DH01\Temp\StagingArea\Data\Managed\Unity.Timeline.dll
 --root-assembly=D:\TU_HOC\Game2D\GameIndie_DH01\Temp\StagingArea\Data\Managed\Unity.2D.SpriteShape.Runtime.dll
 --root-assembly=D:\TU_HOC\Game2D\GameIndie_DH01\Temp\StagingArea\Data\Managed\Unity.2D.PixelPerfect.dll
