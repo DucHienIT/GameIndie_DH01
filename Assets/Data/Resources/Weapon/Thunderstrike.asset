@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: df1786f5fd6944e44a6635737c6f77cd, type: 3}
-  m_Name: Weapon_6
+  m_Name: Thunderstrike
   m_EditorClassIdentifier: 
-  name: Weapon_2
+  name: Thunderstrike
   Attribute:
   - attributeCode: 2
     value: 1
   - attributeCode: 3
     value: 1
+  price: 1

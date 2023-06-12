@@ -54,6 +54,7 @@ public class ItemLooter : DucHienMonoBehaviour
         if(item.name == "Coin")
         {
             inventory.AddCoin(item.GetComponent<CoinCtrl>().CoinValue);
+            DisplayCoin.Instance.UpdateLevelText();
             return true;
         }
         return false;
