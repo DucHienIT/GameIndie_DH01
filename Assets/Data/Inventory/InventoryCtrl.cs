@@ -41,12 +41,10 @@ public class InventoryCtrl : DucHienMonoBehaviour
 
     public virtual bool AddItem(Transform item)
     {
-        if (!CheckEnoughCoin(item))
-        {
-            Debug.Log("Not enough coin");
-            return false;
-        }
+        if (!CheckEnoughCoin(item)) return false;
         this.AddItemIntoInventory(item);
+        this.Inventory.EquipWeapon(item.GetComponent<WeaponCtrl>().WeaponSO);
+
         if (CheckItemInInventory(item)) return true;
         Transform newTransform = Instantiate(item);
         this.TurnOffButton(newTransform);
