@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharaterMovement : MonoBehaviour
+public class CharaterMovement : DucHienMonoBehaviour
 {
+    [SerializeField] protected Transform Model;
     [SerializeField] protected float speed = 1f;
     [SerializeField] protected float jumpPower = 4f;
     [SerializeField] protected Vector3 movementInput;
@@ -12,10 +13,22 @@ public class CharaterMovement : MonoBehaviour
     private Rigidbody2D rb;
    
 
-    private void Start()
+
+    protected override void Start()
     {
         animator = transform.parent.GetComponentInChildren<Animator>();
         rb = transform.parent.GetComponent<Rigidbody2D>();
+        
+    }
+    protected override void LoadComponents()
+    {
+        base.LoadComponents();
+        this.LoadModel();
+    }
+    protected virtual void LoadModel()
+    {
+        if (this.Model != null) return;
+        this.Model = transform.parent.Find("Model").transform;
     }
 
     void Update()
@@ -36,11 +49,11 @@ public class CharaterMovement : MonoBehaviour
     {
         if (movementInput.x < 0) // Ấn phím A, quay qua trái
         {
-            transform.parent.rotation = Quaternion.Euler(0f, 180f, 0f);
+            Model.rotation = Quaternion.Euler(0f, 180f, 0f);
         }
         else if (movementInput.x > 0) // Ấn phím D, quay qua phải
         {
-            transform.parent.rotation = Quaternion.Euler(0f, 0f, 0f);
+            Model.rotation = Quaternion.Euler(0f, 0f, 0f);
         }
     }
 

@@ -1,11 +1,12 @@
 ﻿
 using UnityEngine;
-
 public class EquipCtrl : DucHienMonoBehaviour
 {
     
     [SerializeField] protected WeaponSO weaponSO;
     public WeaponSO WeaponSO { get { return weaponSO; } }
+
+    private bool isFlip = false;
 
     protected virtual void FixedUpdate()
     {
@@ -39,11 +40,31 @@ public class EquipCtrl : DucHienMonoBehaviour
 
     protected virtual Quaternion UpdateQuaternionEquipment()
     {
-          // Tính toán góc giữa đối tượng bắn và vị trí chuột
-        Vector3 direction = this.GetMousePosition() - transform.position;
+        // Tính toán góc giữa đối tượng bắn và vị trí chuột
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 direction = mousePosition - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+       
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+        if (direction.x < 0)
+        {   
+            if(isFlip) return rotation;
+            Vector3 scale = transform.localScale;
+            scale.y = Mathf.Abs(scale.y) * -1;
+            transform.localScale = scale;
+            isFlip = true;
+        }
+        else
+        {
+            if(!isFlip) return rotation;
+            Vector3 scale = transform.localScale;
+            scale.y = Mathf.Abs(scale.y);
+            transform.localScale = scale;
+            isFlip = false;
+        }
+
         return rotation;
     }
+
 }
