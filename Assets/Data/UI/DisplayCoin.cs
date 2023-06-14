@@ -40,6 +40,7 @@ public class DisplayCoin : DucHienMonoBehaviour
     }
     public virtual void UpdateLevelText()
     {
+        if (PlayerCtrl.Instance == null) return;
         this.levelText.text = PlayerCtrl.Instance.Charater.Inventory.TotelCoin.ToString(); 
     }
 }

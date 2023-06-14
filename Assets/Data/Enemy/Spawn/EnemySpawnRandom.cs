@@ -9,13 +9,14 @@ public class EnemySpawnRandom : DucHienMonoBehaviour
     [SerializeField] protected EnemySpawnCtrl enemySpawnCtrl;
     [SerializeField] protected float enemySpawnDelay = 3f;
     [SerializeField] protected float enemySpawnTimer = 0f;
-    [SerializeField] protected int enemySpawnLimit = 9;
+    [SerializeField] protected List<int> enemySpawnLimitEachRound;
 
-
+   
     protected override void LoadComponents()
     {
         base.LoadComponents();
         this.LoadEnemySpawnCtrl();
+        this.LoadLimitEnemy();
     }
     protected virtual void LoadEnemySpawnCtrl()
     {
@@ -23,7 +24,15 @@ public class EnemySpawnRandom : DucHienMonoBehaviour
         this.enemySpawnCtrl = this.GetComponent<EnemySpawnCtrl>();
         Debug.Log(transform.name + " load EnemySpawnCtrl", gameObject);
     }
+    protected virtual void LoadLimitEnemy()
+    {
+        enemySpawnLimitEachRound = new List<int>();
 
+        for (int i = 0; i < 40; i++)
+        {
+            enemySpawnLimitEachRound.Add(10 + i * 5);
+        }
+    }    
     protected virtual void FixedUpdate()
     {
         this.EnemySpawning();
@@ -48,6 +57,9 @@ public class EnemySpawnRandom : DucHienMonoBehaviour
     {
         int currentJunk = this.enemySpawnCtrl.EnemySpawner.SpawnedCount;
 
-        return currentJunk >= this.enemySpawnLimit;
+        int LimitEnemy = this.enemySpawnLimitEachRound[RoundManager.Instance.RoundCount-1];
+        if (LimitEnemy == null) LimitEnemy = enemySpawnLimitEachRound[enemySpawnLimitEachRound.Count - 1];
+
+        return currentJunk >= LimitEnemy;
     }
 }

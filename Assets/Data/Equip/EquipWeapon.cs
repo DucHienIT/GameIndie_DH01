@@ -1,13 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Progress;
+using UnityEngine.WSA;
 
 public class EquipWeapon : DucHienMonoBehaviour
 {
     private static EquipWeapon instance;
     public static EquipWeapon Instance { get { return instance; } }
     [SerializeField] protected Inventory inventory;
+
+    [SerializeField] protected List<Transform> holder;
+    public List<Transform> Holder => holder;
 
     protected override void Awake()
     {
@@ -24,22 +28,47 @@ public class EquipWeapon : DucHienMonoBehaviour
         base.LoadComponents();
         this.LoadInventory();
     }
+    public virtual void LoadHolder()
+    {
+        int index = 0;
+        while (true)
+        {
+            if (this.transform.GetChild(index).childCount > 0)
+                this.holder.Add(this.transform.GetChild(index).GetChild(0));
+            index++;
+
+            if (index >= 6) return;
+        }
+    }
     protected virtual void LoadInventory()
     {
         if (this.inventory != null) return;
         this.inventory = transform.parent.GetComponentInChildren<Inventory>();
     }
 
-    public virtual void EquipWeaponInInventory(Transform holder)
+    public virtual void AddEquip(WeaponSO weapon)
     {
+        Transform obj = EquipSpawner.Instance.Spawn(weapon.name, transform.position, transform.rotation);
+        if (obj == null) return;
+        obj.gameObject.SetActive(true);
+
         int index = 0;
-        while(holder.childCount > 0)
+        while (index < 6)
         {
-            holder.GetChild(0).SetParent(this.transform.GetChild(index));
-            Debug.Log(index);
+            if (this.transform.GetChild(index).childCount == 0)
+            {
+                obj.SetParent(this.transform.GetChild(index));
+                this.holder.Add(obj);
+                return;
+            }
             index++;
         }
+      
     }
 
-
+    protected virtual Transform ResetLocalScale(Transform item)
+    {
+        item.localScale = new Vector3(0.3f, 0.3f, 1f);
+        return item;
+    }
 }

@@ -62,7 +62,7 @@ public class CharaterMovement : DucHienMonoBehaviour
         Vector3 movement = movementInput.normalized * speed;
         Vector3 newPosition = transform.parent.position + movement * Time.deltaTime;
 
-        if (newPosition.x > limitX || newPosition.x < -limitX) return;
+       // if (newPosition.x > limitX || newPosition.x < -limitX) return;
         transform.parent.position = newPosition;
     }
 

@@ -13,6 +13,18 @@ MonoBehaviour:
   m_Name: Enemy_2
   m_EditorClassIdentifier: 
   enemyName: Enemy_2
-  hpMax: 20
+  hpMax: 50
   exp: 40
   coin: 2
+  rateEachRound:
+  - 0
+  - 0.1
+  - 0.2
+  - 0.3
+  - 0.4
+  - 0.5
+  - 0.6
+  - 0.7
+  - 0.8
+  - 0.9
+  - 1

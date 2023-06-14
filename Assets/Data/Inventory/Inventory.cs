@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 public class Inventory : DucHienMonoBehaviour
 {
@@ -50,10 +49,5 @@ public class Inventory : DucHienMonoBehaviour
         return false;
     }
 
-    public virtual void EquipWeapon(WeaponSO weapon)
-    {
-        Transform obj = EquipSpawner.Instance.Spawn(weapon.name, transform.position, transform.rotation);
-        if (obj == null) return;
-        obj.gameObject.SetActive(true);
-    }
+    
 }

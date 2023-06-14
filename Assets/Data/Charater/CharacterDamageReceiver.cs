@@ -35,6 +35,7 @@ public class CharacterDamageReceiver : DamageReceiver
 
     protected override void OnDead()
     {
+        Destroy(PlayerCtrl.Instance.gameObject);
         SceneLoadManager.Instance.LoadNewScene("GameOver");
     }
 }

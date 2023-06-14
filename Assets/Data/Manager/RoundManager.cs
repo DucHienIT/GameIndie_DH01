@@ -9,7 +9,11 @@ public class RoundManager : DucHienMonoBehaviour
     public static RoundManager Instance => instance;
 
     [SerializeField] protected int Round;
+    [SerializeField] protected List<int> timeRound;
+    public List<int> TimeRound => timeRound;
     public int RoundText => Round;
+    public int RoundCount => Round;
+
 
     protected override void Awake()
     {

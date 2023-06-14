@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -43,8 +43,8 @@ public class InventoryCtrl : DucHienMonoBehaviour
     {
         if (!CheckEnoughCoin(item)) return false;
         this.AddItemIntoInventory(item);
-        this.Inventory.EquipWeapon(item.GetComponent<WeaponCtrl>().WeaponSO);
 
+        
         if (CheckItemInInventory(item)) return true;
         Transform newTransform = Instantiate(item);
         this.TurnOffButton(newTransform);

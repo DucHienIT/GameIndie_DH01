@@ -17,7 +17,7 @@ public class RoundTime : DucHienMonoBehaviour
     protected override void Start()
     {
         base.Start();
-        this.time = roundTime;
+        this.time = RoundManager.Instance.TimeRound[RoundManager.Instance.RoundCount-1];
     }
     protected virtual void FixedUpdate()
     {
@@ -29,7 +29,6 @@ public class RoundTime : DucHienMonoBehaviour
         base.LoadComponents();
         this.LoadRoud();
         this.LoadTime();
-        
     }
 
     protected virtual void LoadRoud()

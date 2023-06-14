@@ -9,4 +9,5 @@ public class EnemySO : ScriptableObject
     public int hpMax = 10;
     public int exp = 10;
     public int coin = 1;
+    public List<float> rateEachRound = new List<float>();
 }

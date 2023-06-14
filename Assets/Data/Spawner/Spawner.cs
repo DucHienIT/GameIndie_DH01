@@ -105,4 +105,7 @@ public abstract class Spawner : DucHienMonoBehaviour
         int rand = Random.Range(0, this.prefabs.Count);
         return this.prefabs[rand];
     }
+
+
+
 }

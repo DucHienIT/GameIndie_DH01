@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class StoreTableRandom : DucHienMonoBehaviour
 {
@@ -59,4 +60,8 @@ public class StoreTableRandom : DucHienMonoBehaviour
         WeaponSpawner.Instance.Despawn(item);
     }    
 
+    public virtual bool CheckIsEquipment(Transform item)
+    {
+        return item.GetComponentInChildren<WeaponCtrl>().WeaponSO.equipment;
+    }
 }
