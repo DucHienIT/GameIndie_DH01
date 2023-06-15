@@ -71,4 +71,12 @@ public class EquipWeapon : DucHienMonoBehaviour
         item.localScale = new Vector3(0.3f, 0.3f, 1f);
         return item;
     }
+
+    public virtual void RemoveEquip(int index)
+    {
+        Transform removeEquip = this.transform.GetChild(index).GetChild(0);
+        if (removeEquip == null) return;
+        this.holder.Remove(removeEquip);
+        Destroy(removeEquip.gameObject);
+    }
 }

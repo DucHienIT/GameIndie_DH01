@@ -23,7 +23,4 @@ public class HoverWeapon : DucHienMonoBehaviour, IPointerEnterHandler, IPointerE
     {
         this.transform.Find("Recycle").gameObject.SetActive(false);
     }
-
-
-
 }

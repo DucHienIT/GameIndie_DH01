@@ -13,6 +13,7 @@ public class Equipment : DucHienMonoBehaviour
     public Transform Content { get { return this.content; } }
 
     [SerializeField] protected EquipWeapon equipWeapon;
+    public EquipWeapon EquipWeapon { get { return this.equipWeapon; } }
 
     protected override void Awake()
     {
@@ -59,6 +60,13 @@ public class Equipment : DucHienMonoBehaviour
 
         return true;
     }
+    public virtual void RemoveItem(int index)
+    {
+        Debug.Log("RemoveItem: " + index);
+        this.equipWeapon.RemoveEquip(index);
+        Destroy(this.content.GetChild(index).gameObject);
+        this.ReloadWeaponInEquipment();
+    }
 
     protected virtual void TurnOffChooseButton(Transform parent)
     {
@@ -84,6 +92,7 @@ public class Equipment : DucHienMonoBehaviour
 
     protected virtual void ReloadWeaponInEquipment()
     {
+        this.RemoveAllItem();
         List<Transform> transforms = PlayerCtrl.Instance.Charater.EquipWeapon.Holder;
 
         foreach (Transform item in transforms)
@@ -94,6 +103,13 @@ public class Equipment : DucHienMonoBehaviour
             this.TurnOffChooseButton(newTransform);
             this.TurnOnHoverBlock(newTransform);
             newTransform.parent = this.content;
+        }
+    }
+    protected virtual void RemoveAllItem()
+    {
+        for (int i = 0; i < this.content.childCount; i++)
+        {
+            Destroy(this.content.GetChild(i).gameObject);
         }
     }
 
