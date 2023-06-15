@@ -1,12 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public abstract class BaseButton : DucHienMonoBehaviour
+public abstract class BaseButton : DucHienMonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [Header("Base Button")]
-    [SerializeField] protected Button Button;
+    [SerializeField] protected Button button;
 
     protected override void Start()
     {
@@ -20,15 +19,24 @@ public abstract class BaseButton : DucHienMonoBehaviour
     }
     protected virtual void LoadButton()
     {
-        if (this.Button != null) return;
-        this.Button = GetComponent<Button>();
+        if (this.button != null) return;
+        this.button = GetComponent<Button>();
         Debug.Log("Load Button: " + transform.name, gameObject);
     }
     protected virtual void AddOnClickEvent()
     {
-        this.Button.onClick.AddListener(this.OnClick);
+        this.button.onClick.AddListener(this.OnClick);
         Debug.Log("Add On Click Event: " + transform.name, gameObject);
     }
     protected abstract void OnClick();
 
+    public virtual void OnPointerEnter(PointerEventData eventData)
+    {
+       
+    }
+
+    public virtual void OnPointerExit(PointerEventData eventData)
+    {
+        
+    }
 }

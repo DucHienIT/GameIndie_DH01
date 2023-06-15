@@ -47,23 +47,32 @@ public class Equipment : DucHienMonoBehaviour
     public virtual bool AddItem(Transform item)
     {
         if (!CheckEnoughCoin(item)) return false;
+        if (!CheckCanAddItem(item)) return false;
+
         this.equipWeapon.AddEquip(item.GetComponent<WeaponCtrl>().WeaponSO);
         
         Transform newTransform = Instantiate(item);
-        this.TurnOffButton(newTransform);
+        this.TurnOffChooseButton(newTransform);
+        this.TurnOnHoverBlock(newTransform);
         newTransform.localScale = new Vector3(0.3f, 0.3f, 1);
         newTransform.parent = this.content;
 
         return true;
     }
 
-    protected virtual void TurnOffButton(Transform parent)
+    protected virtual void TurnOffChooseButton(Transform parent)
     {
         Button button = parent.GetComponentInChildren<Button>();
         GameObject text = parent.Find("Price").gameObject;
+        
         button.enabled = false;
         text.SetActive(false);
     }
+    protected virtual void TurnOnHoverBlock(Transform item)
+    {
+        item.Find("Hover").gameObject.SetActive(true);
+    }
+
     protected virtual bool CheckEnoughCoin(Transform item)
     {
         WeaponSO weaponSO = item.GetComponent<WeaponCtrl>().WeaponSO;
@@ -82,8 +91,15 @@ public class Equipment : DucHienMonoBehaviour
             Transform newTransform = WeaponSpawner.Instance.Spawn(item.name, item.position, Quaternion.Euler(0, 0, 0));
             newTransform.gameObject.SetActive(true);
             newTransform.localScale = new Vector3(0.3f, 0.3f, 1);
-            this.TurnOffButton(newTransform);
+            this.TurnOffChooseButton(newTransform);
+            this.TurnOnHoverBlock(newTransform);
             newTransform.parent = this.content;
         }
     }
+
+    protected virtual bool CheckCanAddItem(Transform item)
+    {
+        if (this.content.childCount < 6) return true;
+        return false;
+    }       
 }

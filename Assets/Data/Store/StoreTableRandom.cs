@@ -41,6 +41,7 @@ public class StoreTableRandom : DucHienMonoBehaviour
         string itemName = WeaponSpawner.Instance.ItemList[randomIndex].name;
         Transform obj = WeaponSpawner.Instance.Spawn(itemName, transform.position, transform.rotation);
         obj.gameObject.SetActive(true);
+        this.TurnOffHoverBlock(obj);
         if (obj == null) return false;
         return true;
 
@@ -63,5 +64,10 @@ public class StoreTableRandom : DucHienMonoBehaviour
     public virtual bool CheckIsEquipment(Transform item)
     {
         return item.GetComponentInChildren<WeaponCtrl>().WeaponSO.equipment;
+    }
+
+    protected virtual void TurnOffHoverBlock(Transform item)
+    {
+        item.Find("Hover").gameObject.SetActive(false);
     }
 }

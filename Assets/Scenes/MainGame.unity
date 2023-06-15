@@ -504,7 +504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Round: 1
-  timeRound: 0a000000140000001e00000028000000
+  timeRound: 0a000000140000001e000000280000002800000028000000280000002800000028000000280000002800000028000000280000002800000028000000280000002800000028000000280000002800000028000000
 --- !u!4 &93011076
 Transform:
   m_ObjectHideFlags: 0
@@ -4369,6 +4369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 2001599197}
+  holder: []
 --- !u!1 &854890525
 GameObject:
   m_ObjectHideFlags: 0
