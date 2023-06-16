@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -17,6 +17,13 @@ public class GameCtrl : DucHienMonoBehaviour
             return;
         }
         GameCtrl.instance = this;
+
+        DontDestroyOnLoad(this.gameObject);
+    }
+    protected override void Start()
+    {
+        base.Start();
+        this.SetLandscapeOrientation();
     }
 
     public virtual void StartGame()
@@ -41,5 +48,11 @@ public class GameCtrl : DucHienMonoBehaviour
     public virtual void Test()
     {
         Debug.Log("Test");
+    }
+
+    protected virtual void SetLandscapeOrientation()
+    {
+        // Đặt chế độ màn hình ngang
+        Screen.orientation = ScreenOrientation.LandscapeLeft;
     }
 }

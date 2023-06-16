@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InputManager : MonoBehaviour
+public class InputManager : DucHienMonoBehaviour
 {
+
     private static InputManager instance;
     public static InputManager Instance { get { return instance; } }
 
@@ -16,12 +17,15 @@ public class InputManager : MonoBehaviour
     [SerializeField] protected float onShooting;
     public float OnShooting { get { return this.onShooting; } }
 
-    [SerializeField] protected bool isJumping;
-    public bool IsJumping { get { return this.isJumping; } }
+    [SerializeField] protected bool onJump;
+    public bool OnJump => onJump;
+
+    [SerializeField] protected Joystick joystick;
 
     InventoryData inventoryData;
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         if (InputManager.instance != null)
         {
             Destroy(this.gameObject);
@@ -31,47 +35,67 @@ public class InputManager : MonoBehaviour
 
         DontDestroyOnLoad(this.gameObject);
     }
-
+    protected override void LoadComponents()
+    {
+        base.LoadComponents();
+        this.LoadJoystick();
+    }
+    protected virtual void LoadJoystick()
+    {
+        if (this.joystick != null) return;
+        this.joystick = FindObjectOfType<Joystick>();
+    }
     void Update()
     {
         GetMovementInput();
         GetMouseDown();
-        GetJumpInput();
         GetOpenInventory();
     }
 
+
     protected virtual void GetMovementInput()
     {
-        float moveHorizontal = 0f;
-        float moveVertical = 0f;
+        if (joystick == null) 
+            LoadJoystick();
+        float horizontal = joystick.Horizontal;
+        if (horizontal < 0)
+        {
+            movementInput = Vector3.left;
+            GetOnJump();
+        }    
+        else if (horizontal > 0)
+        {
+            GetOnJump();
+            movementInput = Vector3.right;
+        } 
+        else
+        {
+            this.onJump = false;
+            movementInput = Vector3.zero;
+        }    
+    }
 
-        if (Input.GetKey(KeyCode.D))
-        {
-            moveHorizontal = 1f;
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            moveHorizontal = -1f;
-        }
-        movementInput = new Vector3(moveHorizontal, 0f, moveVertical);
+    protected virtual void GetOnJump()
+    {
+        if (joystick.Vertical > 0)
+            this.onJump = true;
+        else
+            this.onJump = false;
     }
 
     protected virtual void GetMouseDown()
     {
-        this.onFiring = Input.GetAxis("Fire1");
-        this.onShooting = Input.GetAxis("Fire2");
-    }
-
-    protected virtual void GetJumpInput()
-    {
-        this.isJumping = Input.GetKeyDown(KeyCode.Space);
+        //this.onFiring = Input.GetAxis("Fire1");
+        //this.onShooting = Input.GetAxis("Fire2");
     }
 
     protected virtual void GetOpenInventory()
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
-            
+             
         }
     }
+
+
 }
