@@ -1,7 +1,7 @@
 [# Game Design Document
 ](https://docs.google.com/document/d/1RrMy8KLYFrqBFXrwY0cCQjQDps6gpysbGNaFhvRWk08/edit#heading=h.aes937z3kjs8)
 
-[# Link Youtube Demo Game (Build 13/06/2023)
+[# Link Youtube Demo Game (Build 17/06/2023)
 ](https://youtu.be/QltYZzfAqNI)
 
 ![iicon](https://github.com/DucHienIT/GameIndie_DH01/assets/88640081/319df0b2-ada2-4ecd-bae8-45f33a37811f)
