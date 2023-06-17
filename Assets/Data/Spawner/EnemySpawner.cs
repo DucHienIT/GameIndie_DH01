@@ -11,6 +11,9 @@ public class EnemySpawner : Spawner
     public static string Enemy_1 = "Enemy_1";
     public static string Enemy_2 = "Enemy_2";
 
+    [SerializeField] protected List<Transform> enemies;
+    public List<Transform> Enemies => enemies;
+
     protected override void Awake()
     {
         base.Awake();
@@ -41,6 +44,16 @@ public class EnemySpawner : Spawner
         else
         {
             return false; // Don't spawn
+        }
+    }
+
+    public virtual void UpdateEnemies()
+    {
+        this.enemies.Clear();
+        foreach (Transform child in this.holder)
+        {
+            if (child.gameObject.activeSelf)
+                this.enemies.Add(child);
         }
     }
 }
