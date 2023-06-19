@@ -71,7 +71,8 @@ public class CharaterMovement : DucHienMonoBehaviour
         bool isRun = (movementInput.x != 0); // Kiểm tra xem có đang di chuyển (ấn phím A hoặc D) hay không
         animator.SetBool("isRun", isRun);
 
-        if (CharaterImpact.Instance.OnGround) animator.SetBool("isJump", false); 
+        if (CharaterImpact.Instance.OnGround)
+            animator.SetBool("isJump", false);
 
     }
 
@@ -82,6 +83,7 @@ public class CharaterMovement : DucHienMonoBehaviour
             rb.AddForce(new Vector2(0f, jumpPower), ForceMode2D.Impulse);
             CharaterImpact.Instance.SetOnGroud(false);
             animator.SetBool("isJump", true);
+            InputManager.Instance.SetOnJump(false);
         }
     }
 }

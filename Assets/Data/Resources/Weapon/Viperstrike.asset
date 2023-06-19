@@ -18,4 +18,5 @@ MonoBehaviour:
     value: 2
   - attributeCode: 2
     value: 1
-  price: 1
+  price: 20
+  equipment: 1

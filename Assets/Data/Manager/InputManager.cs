@@ -1,6 +1,7 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.OnScreen;
 
 public class InputManager : DucHienMonoBehaviour
 {
@@ -21,6 +22,7 @@ public class InputManager : DucHienMonoBehaviour
     public bool OnJump => onJump;
 
     [SerializeField] protected Joystick joystick;
+
 
     InventoryData inventoryData;
     protected override void Awake()
@@ -48,7 +50,6 @@ public class InputManager : DucHienMonoBehaviour
     void Update()
     {
         GetMovementInput();
-        GetMouseDown();
         GetOpenInventory();
     }
 
@@ -59,34 +60,17 @@ public class InputManager : DucHienMonoBehaviour
             LoadJoystick();
         float horizontal = joystick.Horizontal;
         if (horizontal < 0)
-        {
             movementInput = Vector3.left;
-            GetOnJump();
-        }    
+        
         else if (horizontal > 0)
-        {
-            GetOnJump();
             movementInput = Vector3.right;
-        } 
         else
-        {
-            this.onJump = false;
             movementInput = Vector3.zero;
-        }    
     }
 
-    protected virtual void GetOnJump()
+    public virtual void SetOnJump(bool value)
     {
-        if (joystick.Vertical > 0)
-            this.onJump = true;
-        else
-            this.onJump = false;
-    }
-
-    protected virtual void GetMouseDown()
-    {
-        //this.onFiring = Input.GetAxis("Fire1");
-        //this.onShooting = Input.GetAxis("Fire2");
+        this.onJump = value;
     }
 
     protected virtual void GetOpenInventory()
