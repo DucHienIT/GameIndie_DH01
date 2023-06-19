@@ -1,4 +1,5 @@
 ﻿
+using System.Collections.Generic;
 using UnityEngine;
 public class EquipCtrl : DucHienMonoBehaviour
 {
@@ -30,19 +31,9 @@ public class EquipCtrl : DucHienMonoBehaviour
         this.transform.localRotation = UpdateQuaternionEquipment();
     }
 
-    protected virtual Vector3 GetMousePosition()
-    {
-        Vector3 mousePosition = Input.mousePosition;
-        mousePosition.z = 10f; 
-        Vector3 targetPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        return targetPosition;
-    }
-
     protected virtual Quaternion UpdateQuaternionEquipment()
     {
-        // Tính toán góc giữa đối tượng bắn và vị trí chuột
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 direction = mousePosition - transform.position;
+        Vector3 direction = GetPositionEnemyNearest() - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
        
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
@@ -65,6 +56,32 @@ public class EquipCtrl : DucHienMonoBehaviour
         }
 
         return rotation;
+    }
+
+    protected virtual Vector3 GetPositionEnemyNearest()
+    {
+        if (EnemySpawner.Instance == null) return Vector3.zero;
+        // Lấy danh sách enemy
+        List<Transform> enemies = EnemySpawner.Instance.Enemies;
+
+        // Nếu không có enemy nào thì trả về Vector3.zero
+        if (enemies.Count == 0) return Vector3.zero;
+        Vector3 targetPosition = Vector3.zero;
+
+        // Tìm enemy gần nhất
+
+        float minDistance = float.MaxValue;
+        foreach (Transform enemy in enemies)
+        {
+            float distance = Vector3.Distance(transform.position, enemy.position);
+            if (distance < minDistance)
+            {
+                minDistance = distance;
+                targetPosition = enemy.position;
+            }
+        }
+
+        return targetPosition;
     }
 
 }

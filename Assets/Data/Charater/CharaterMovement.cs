@@ -77,7 +77,7 @@ public class CharaterMovement : DucHienMonoBehaviour
 
     protected virtual void HandleJump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && CharaterImpact.Instance.OnGround)
+        if (InputManager.Instance.OnJump  && CharaterImpact.Instance.OnGround)
         {
             rb.AddForce(new Vector2(0f, jumpPower), ForceMode2D.Impulse);
             CharaterImpact.Instance.SetOnGroud(false);
