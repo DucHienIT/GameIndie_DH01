@@ -6,7 +6,7 @@
 
 ![iicon](https://github.com/DucHienIT/GameIndie_DH01/assets/88640081/319df0b2-ada2-4ecd-bae8-45f33a37811f)
 
-# Max Fire
+# Mobile game: Max Fire
 
 Max Fire is an action-packed 2D shooting game that offers limitless battles against enemies, leveling up your character, collecting loot, and unlocking new abilities.
 
