@@ -22,6 +22,9 @@ public class EnemyCtrl : DucHienMonoBehaviour
     [SerializeField] protected EnemyStatusBar enemyStatusBar;
     public EnemyStatusBar EnemyStatusBar { get { return enemyStatusBar; } }
 
+    [SerializeField] protected EnemyDamageSender enemyDamageSender;
+    public EnemyDamageSender EnemyDamageSender { get { return enemyDamageSender; } }
+
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -31,6 +34,7 @@ public class EnemyCtrl : DucHienMonoBehaviour
         this.LoadEnemySO();
         this.LoadAnimator();
         this.LoadEnemyStatusBar();
+        this.LoadEnemyDamageSender();
 
 
     }
@@ -68,5 +72,10 @@ public class EnemyCtrl : DucHienMonoBehaviour
     {
         if (this.enemyStatusBar != null) return;
         this.enemyStatusBar = GetComponentInChildren<EnemyStatusBar>();
+    }
+    protected virtual void LoadEnemyDamageSender()
+    {
+        if (this.enemyDamageSender != null) return;
+        this.enemyDamageSender = GetComponentInChildren<EnemyDamageSender>();
     }
 }

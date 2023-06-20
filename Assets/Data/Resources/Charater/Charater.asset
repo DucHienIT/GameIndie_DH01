@@ -17,4 +17,4 @@ MonoBehaviour:
   atk: 5
   def: 2
   spd: 2
-  atkSpd: 5
+  atkSpd: 100

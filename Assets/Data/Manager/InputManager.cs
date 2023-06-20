@@ -24,7 +24,6 @@ public class InputManager : DucHienMonoBehaviour
     [SerializeField] protected Joystick joystick;
 
 
-    InventoryData inventoryData;
     protected override void Awake()
     {
         base.Awake();
@@ -53,11 +52,14 @@ public class InputManager : DucHienMonoBehaviour
         GetOpenInventory();
     }
 
-
     protected virtual void GetMovementInput()
     {
-        if (joystick == null) 
-            LoadJoystick();
+        if (joystick == null)
+        {
+            this.LoadJoystick();
+            return;
+        } 
+        
         float horizontal = joystick.Horizontal;
         if (horizontal < 0)
             movementInput = Vector3.left;

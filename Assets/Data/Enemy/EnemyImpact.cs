@@ -4,16 +4,18 @@ using UnityEngine;
 
 [RequireComponent(typeof(SphereCollider))]
 [RequireComponent(typeof(Rigidbody))]
-public class BulletImpact : BulletAbstract
+public class EnemyImpact : DucHienMonoBehaviour
 {
     [SerializeField] protected SphereCollider sphereCollider;
     [SerializeField] protected Rigidbody rigidbody;
-   
+    [SerializeField] protected EnemyCtrl enemyCtrl;
+
     protected override void LoadComponents()
     {
         base.LoadComponents();
         this.LoadSphereCollider();
         this.LoadRigidbody();
+        this.LoadEnemyCtrl();
         
     }
 
@@ -22,7 +24,7 @@ public class BulletImpact : BulletAbstract
         if (this.sphereCollider != null) return;
         this.sphereCollider = GetComponent<SphereCollider>();
         this.sphereCollider.isTrigger = true;
-        this.sphereCollider.radius = 0.05f;
+        this.sphereCollider.radius = 0.14f;
         Debug.Log("LoadSphereCollider: " + this.sphereCollider);
     }
     
@@ -33,9 +35,14 @@ public class BulletImpact : BulletAbstract
         this.rigidbody.isKinematic = true;
         Debug.Log("LoadRigidbody: " + this.rigidbody);
     }
+    protected virtual void LoadEnemyCtrl()
+    {
+        if (this.enemyCtrl != null) return;
+        this.enemyCtrl = transform.parent.GetComponent<EnemyCtrl>();
+        Debug.Log("LoadEnemyCtrl: " + this.enemyCtrl);
+    }
     protected virtual void OnTriggerEnter(Collider other)
     {
-         
-         this.BulletCtrl.DamageSender.Send(other.transform);  
+        this.enemyCtrl.EnemyDamageSender.Send(other.transform);  
     }
 }

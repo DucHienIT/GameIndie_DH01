@@ -1,11 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CharaterShoot : Shoot
 {
     [SerializeField] protected bool shooting = false;
-    [SerializeField] protected float shootDelay = 0.5f;
+    [SerializeField] protected float shootDelay = 1f;
     [SerializeField] protected float shootTimer = 0f;
 
 
@@ -34,6 +35,7 @@ public class CharaterShoot : Shoot
 
     protected override void SetShooting()
     {
+        this.UpdateDelay();
         if (EnemySpawner.Instance == null) return;
         EnemySpawner.Instance.UpdateEnemies();
         if (GetPositionEnemyNearest () == Vector3.zero)
@@ -70,4 +72,10 @@ public class CharaterShoot : Shoot
 
         return targetPosition;
     }    
+
+    protected virtual void UpdateDelay()
+    {
+        this.shootDelay = 1f * 100 / PlayerCtrl.Instance.Status.AttackSpeed;
+    }
+
 }

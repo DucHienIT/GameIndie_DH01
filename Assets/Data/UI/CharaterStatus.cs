@@ -15,10 +15,16 @@ public class CharaterStatus : Status
 
     public int Health => health;
     public int AttackPower => attackPower;
+    public int AttackSpeed => attackSpeed;
 
     protected override void Awake()
     {
         base.Awake();
+        if (CharaterStatus.instance != null)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
         CharaterStatus.instance = this;
     }
     protected override void LoadComponents()
@@ -70,7 +76,12 @@ public class CharaterStatus : Status
         else if(attributeCode == AttributeCode.SpeedAtk)
         {
             this.attackSpeed += value;
-        }   
+        }
+        else
+        {
+            Debug.Log("AttributeCode not found");
+        }
+        Debug.Log("CalculateStatus: " + attributeCode + " " + value);
     }
     
     protected virtual void LoadCharaterStatus()
